@@ -1,0 +1,144 @@
+/**************************
+  DEFAULT BOOTSTRAP STYLES
+**************************/
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+  
+.btn-lg {
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+/***********************
+  RAISED BUTTONS
+************************/
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #007299;
+}
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+/***********************
+  CUSTOM BTN VALUES PRIMARY
+************************/
+
+.btn {
+    padding: 44px 54px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #3498db ;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+/***********************
+  CUSTOM BTN VALUES darkblue
+************************/
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-darkblue {
+    background: #2e8ece;
+    color: #ffffff;
+}
+.btn-darkblue:hover, .btn-darkblue:focus, .btn-darkblue:active, .btn-darkblue.active, .open > .dropdown-toggle.btn-darkblue {
+    background: #33a6cc;
+}
+.btn-darkblue:active, .btn-darkblue.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+/***********************
+  CUSTOM BTN VALUES purple 
+************************/
+.btn-purple  {
+    background: #9b59b6;
+    color: #ffffff;
+}
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active, .btn-purple.active, .open > .dropdown-toggle.btn-purple {
+    background: #33a6cc;
+}
+.btn-purple:active, .btn-purple.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+/***********************
+  CUSTOM BTN VALUES DarkGoldenRod
+************************/
+.btn-DarkGoldenRod {
+    background: #0099cc;
+    color: #ffffff;
+}
+.btn-DarkGoldenRod:hover, .btn-DarkGoldenRode:focus, .btn-DarkGoldenRod:active, .btn-DarkGoldenRod.active, .open > .dropdown-toggle.btn-DarkGoldenRod {
+    background: #33a6cc;
+}
+.btn-DarkGoldenRod:active, .btn-DarkGoldenRod.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+/***********************
+  BUTTON GROUPS
+************************/
+
+.btn-group {
+  padding-bottom: 10px;
+}

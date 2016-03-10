@@ -1,89 +1,117 @@
-/**************************
-  DEFAULT BOOTSTRAP STYLES
-**************************/
+/***********************
+  BUTTON 1
+************************/
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  padding: 10px 16px;
+.btn_1 {
+  -moz-box-shadow: 0px 0px 12px -3px #276873;
+  -webkit-box-shadow: 0px 0px 12px -3px #276873;
+  box-shadow: 0px 0px 12px -3px #276873;
+  background-color:#599bb3;
+  border:1px solid #29668f;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:31px 32px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
 }
-  
-.btn-lg {
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 6px;
+.btn_1:hover {
+  background-color:#408c99;
 }
-
-.btn-primary {
-  color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+.btn_1:active {
+  position:relative;
+  top:1px;
 }
 
 /***********************
-  RAISED BUTTONS
+  BUTTON 2
 ************************/
-.btn-primary.raised {
-    box-shadow: 0 3px 0 0 #007299;
+
+.btn_2 {
+  -moz-box-shadow: 0px 0px 12px -3px #54a3f7;
+  -webkit-box-shadow: 0px 0px 12px -3px #54a3f7;
+  box-shadow: 0px 0px 12px -3px #54a3f7;
+  background-color:#007dc1;
+  border:1px solid #124d77;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:31px 32px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #154682;
 }
-.btn-primary.raised:active, .btn-primary.raised.active {
-    background: #33a6cc;
-    box-shadow: none;
-    margin-bottom: -3px;
-    margin-top: 3px;
+.btn_2:hover {
+  background-color:#0061a7;
+}
+.btn_2:active {
+  position:relative;
+  top:1px;
 }
 
 /***********************
-  CUSTOM BTN VALUES PRIMARY
+  BUTTON 3
 ************************/
 
-.btn {
-    padding: 24px 34px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.btn_3 {
+  -moz-box-shadow: 0px 0px 12px -3px #3dc21b;
+  -webkit-box-shadow: 0px 0px 12px -3px #3dc21b;
+  box-shadow: 0px 0px 12px -3px #3dc21b;
+  background-color:#44c767;
+  border:1px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:31px 32px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
 }
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
+.btn_3:hover {
+  background-color:#5cbf2a;
+}
+.btn_3:active {
+  position:relative;
+  top:1px;
 }
 
-.btn-primary {
-    background: #0099cc;
-    color: #ffffff;
+        
+
+/***********************
+  BUTTON 4
+************************/
+
+.btn_4 {
+  -moz-box-shadow: 0px 0px 12px -3px #8dab79;
+  -webkit-box-shadow: 0px 0px 12px -3px #8dab79;
+  box-shadow: 0px 0px 12px -3px #8dab79;
+  background-color:#77d42a;
+  border:1px solid #000000;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:31px 32px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #030500;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
+.btn_4:hover {
+  background-color:#5cb811;
 }
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
-    box-shadow: none;
+.btn_4:active {
+  position:relative;
+  top:1px;
 }
+
 
 /***********************
   BUTTON GROUPS
