@@ -2,6 +2,7 @@
      $('.edit').editable('http://localhost:6003/test');
 
 
+     // ************CASPAR IP UPDATE************
      $('.casparip_update').click(function(){
 
      	var caspar_ip = $('#InputCasparIP').val();
@@ -9,7 +10,7 @@
 
      	$.ajax({
 		    method: "POST",
-		    url:"/test",
+		    url:"/update/caspar_ip",
 		    data: { caspar_ip: caspar_ip},
           	dataType: "json"
 		});
@@ -18,6 +19,25 @@
      });
 
 
+     // ********** GRAPHICS BUTTON ******************
+     $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
+
+     	var id = $(this).attr('id');
+
+     	$('#button_id').val(id);
+
+     	alert("Button was clicked! " + id);
+
+     	$.ajax({
+          method: "GET",
+          url: "/get/button_data",
+          data: { id: id }
+        })
+          .done(function( msg ) {
+            	alert(msg);
+          })
+
+	 });
 
 
 
