@@ -12,9 +12,9 @@ require_all 'routes'
 
 
 class CasparService < Sinatra::Base
-  error Sinatra::NotFound do
-    status 404
-  end
+  # error Sinatra::NotFound do
+  #   status 404
+  # end
 
   	use Router
  	use AdminCaspar
