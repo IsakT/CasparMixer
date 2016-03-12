@@ -16,11 +16,11 @@ class AdminCaspar < Router
 
 	post "/test?" do
 		
-		new_ip = params[:inputlol]
+		new_ip = params[:caspar_ip]
 
-	     ENV['CASPARIP']= new_ip
+	    ENV['CASPARIP'] = new_ip
 
-		erb :'Graphics' , layout: :'layout/index', :locals => {casparIP: ENV['CASPARIP']}
+		# erb :'Graphics' , layout: :'layout/index', :locals => {casparIP: ENV['CASPARIP']}
 
 	end
 
