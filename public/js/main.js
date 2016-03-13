@@ -1,22 +1,47 @@
  $(document).ready(function() {
-     $('.edit').editable('http://localhost:6003/test');
 
+    // When side loads, get the caspar IP and display it
+     display_caspar_ip()
 
      // ************CASPAR IP UPDATE************
+
      $('.casparip_update').click(function(){
 
      	var caspar_ip = $('#InputCasparIP').val();
-     	// alert(caspar_ip);
 
+      // Save the new IP
      	$.ajax({
 		    method: "POST",
 		    url:"/update/caspar_ip",
 		    data: { caspar_ip: caspar_ip},
           	dataType: "json"
-		});
+		  });
 
-     	$('#casparip_label').text("Caspar IP " + caspar_ip);
-     });
+      // Get the new IP
+        display_caspar_ip()
+      });
+
+     function display_caspar_ip() {
+          $.ajax({
+            method: "GET",
+            url: "/get/caspar_ip",
+          })
+          
+          // Add the caspar IP to the label
+          .done(function( msg ) {
+
+              // Parse the response.
+              var json = jQuery.parseJSON(msg);
+
+              // Iterate the JSON and add the data to the form in graphics layout.
+              $.each(json, function(n, elem) {
+
+                  $('#casparip_label').text("Caspar IP " + elem);
+
+              }
+          );
+        })
+     };
 
 
      // ********** GRAPHICS BUTTON ******************
@@ -29,8 +54,6 @@
      	// add button ID to the forms
      	$('#button_id').val(id);
 
-     	// alert("Button was clicked! " + id);
-
      	$.ajax({
           method: "GET",
           url: "/get/button_data",
@@ -38,14 +61,61 @@
         })
         	// Add button data to the forms
           .done(function( msg ) {
-            	console.log(msg);
 
+              // Parse the response.
+              var json = jQuery.parseJSON(msg);
+
+              // Iterate the JSON and add the data to the forms in graphics layout.
+              $.each(json, function(n, elem) {
+
+                switch(n)
+                {
+                  case "button_name":
+                    $('#button_name').val(elem);
+                    break;
+
+                  case "template":
+                    $('#template').val(elem);
+                    break;
+
+                  case "button_id":
+                    $('#button_id').val(elem);
+                    break;
+
+                  case "f0":
+                    $('#f0').val(elem);
+                    break;
+
+                  case "f1":
+                    $('#f1').val(elem);
+                    break;
+
+                  case "f2":
+                    $('#f2').val(elem);
+                    break;
+
+                  case "f3":
+                    $('#f3').val(elem);
+                    break;
+
+                  case "f4":
+                    $('#f4').val(elem);
+                    break;
+
+                  case "f5":
+                    $('#f5').val(elem);
+                    break;
+
+                  case "f6":
+                    $('#f6').val(elem);
+                    break;
+                }
+              });
           })
-
 	 });
 
 	 // CREATE/UPDATE BUTTON DATA
-	 $('#Ajax_button').bind("click keypress", function (evt) {
+	 $('#Ajax_button').click(function() {
 
 		 	var button_name = $('#button_name').val();
 		 	var template =	$('#template').val();
@@ -64,6 +134,4 @@
 		      data: { button_name: button_name, template: template, button_id: button_id, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
 	    	});
 	 });
-
-
  });

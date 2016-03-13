@@ -1,6 +1,4 @@
-class AdminCaspar < Router
-
-	# *********SET CASPAR IP****************
+class AdminCaspar < Router	
 
 	get "/hi" do 
 		var = ENV['CASPARIP']
@@ -8,43 +6,50 @@ class AdminCaspar < Router
 	end
 
 	get "/test" do
-		
-		caspar_ip = ENV['CASPARIP']
+			
 
-		# data_yml = YAML.load_file('db/brackets.yml')
+		erb :'Graphics' , layout: :'layout/index'
+	end
 
-	    # button_data = []
-	    # data_yml.each do |f|
-	    #   button_data.push(f)
-	    # end
+	# *****************************
+	# |			 IP               |
+	# *****************************
 
-		erb :'Graphics' , layout: :'layout/index', :locals => {casparIP: caspar_ip}
+	get "/get/caspar_ip" do
+
+		casparIP_yml = YAML.load_file('db/casparIP.yml')
+
+		if casparIP_yml 
+
+	    	casparIP_yml.to_json
+
+		else 
+			"Not set"
+		end
+
 	end
 
 	post "/update/caspar_ip" do
 		
-		new_ip = params[:caspar_ip]
+		# Create a hash with the parameters, and add an ID to each.
+	    caspar_ip_hash = { caspar_ip: params[:caspar_ip]}
 
-	    ENV['CASPARIP'] = new_ip
-
-		# erb :'Graphics' , layout: :'layout/index', :locals => {casparIP: ENV['CASPARIP']}
+	    File.open('db/casparIP.yml', "w") {|f| f.write(caspar_ip_hash.to_yaml)}
 
 	end
 
-	# ************BUTTON DATA*************
+	# *****************************
+	# |		 BUTTON DATA          |
+	# *****************************
+
 
 	get "/get/button_data" do
 
 		data_yml = YAML.load_file('db/graphic_buttons/'+params[:id]+'.yml')
 
 		if data_yml 
-			button_data = []
-		    data_yml.each do |f|
-		      button_data.push(f)
-		    end
 
-		    content_type :yaml
-	    	button_data.to_yaml
+	    	data_yml.to_json
 
 		else 
 			"No data"
@@ -60,6 +65,11 @@ class AdminCaspar < Router
 	    File.open('db/graphic_buttons/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
 
 	end 
+
+	# *****************************
+	# | 	     CASPAR 	      |
+	# *****************************
+
 
 
 end
