@@ -1,21 +1,12 @@
 ---
-:button_name:
-- SWE FLAG
-:template:
-- sweflag
+:button_name: ''
+:template: ''
 :button_id:
 - btn4_1
-:f0:
-- rew
-:f1:
-- rewq
-:f2:
-- rewq
-:f3:
-- rewq
-:f4:
-- rewq
-:f5:
-- rewq
-:f6:
-- ''
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''

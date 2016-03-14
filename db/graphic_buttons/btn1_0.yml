@@ -1,21 +1,12 @@
 ---
-:button_name:
-- ''
-:template:
-- lolo
+:button_name: ''
+:template: ''
 :button_id:
 - btn1_0
-:f0:
-- lolo
-:f1:
-- lolo
-:f2:
-- ''
-:f3:
-- ''
-:f4:
-- ''
-:f5:
-- ''
-:f6:
-- ''
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''

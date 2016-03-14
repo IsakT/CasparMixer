@@ -53,7 +53,8 @@
      // GET AND DISPLAY BUTTON DATA
      $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
 
-        $('#status_button').val("Loading...");
+      $('#status_button').text("Try again.");
+
      	var id = $(this).attr('id');
 
      	// add button ID to the forms
@@ -115,14 +116,14 @@
                     $('#f6').val(elem);
                     break;
                 }
-                $('#status_button').val("Done!");
+                $('#status_button').text("Done!");
               });
           })
 	 });
 
     	 // UPDATE BUTTON DATA
     	 $('#Ajax_button').click(function() {
-          $('#status_button').val("Loading...");
+          $('#status_button').text("Try again.");
 
     		 	var button_name = $('#button_name').val();
     		 	var template =	$('#template').val();
@@ -143,20 +144,8 @@
 
           display_button_name(button_id)
 
-          $('#status_button').val("Done!");
+          $('#status_button').text("Done!");
     	 });
-
-       $('#clear_data').click(function() {
-
-          var button_id = $('#button_id').val();
-
-          clear_button_data(button_id)
-
-          display_button_name(button_id)
-
-
-       });
-
 
 
        function display_button_name(id) {
@@ -190,9 +179,16 @@
 
 
          function clear_button_data(button_id) {
+
+            $('#status_button').text("Try again.");
+
               $.ajax({
                 method: "POST",
                 url: "/delete/button_data",
                 data: { button_id: button_id }
               })
+
+            $('#status_button').text("Done!");
+
+
             };

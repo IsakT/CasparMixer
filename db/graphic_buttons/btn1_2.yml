@@ -1,21 +1,12 @@
 ---
-:button_name:
-- ''
-:template:
-- gfd
+:button_name: ''
+:template: ''
 :button_id:
 - btn1_2
-:f0:
-- gfd
-:f1:
-- gfd
-:f2:
-- gfd
-:f3:
-- gfd
-:f4:
-- gfd
-:f5:
-- fd
-:f6:
-- gfd
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''

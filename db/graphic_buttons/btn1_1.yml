@@ -1,21 +1,12 @@
 ---
-:button_name:
-- ''
-:template:
-- tre
+:button_name: ''
+:template: ''
 :button_id:
 - btn1_1
-:f0:
-- tre
-:f1:
-- tre
-:f2:
-- tre
-:f3:
-- tre
-:f4:
-- tre
-:f5:
-- tre
-:f6:
-- tre
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''
