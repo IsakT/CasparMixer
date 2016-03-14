@@ -66,6 +66,15 @@ class AdminCaspar < Router
 
 	end 
 
+	post "/delete/button_data" do
+		
+		# Create a hash with the parameters, and add an ID to each.
+	    button_data_hash = { button_name: '', template: '', button_id: [params[:button_id]], f0: '', f1: '', f2: '', f3: '', f4: '', f5: '', f6: ''}
+
+	    File.open('db/graphic_buttons/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
+
+	end 
+
 	# *****************************
 	# | 	     CASPAR 	      |
 	# *****************************
