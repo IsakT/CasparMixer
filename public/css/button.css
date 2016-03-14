@@ -5,9 +5,9 @@
 .btn_1 {
   -moz-box-shadow: 0px 0px 12px -3px #276873;
   -webkit-box-shadow: 0px 0px 12px -3px #276873;
-  box-shadow: 0px 0px 12px -3px #276873;
+  box-shadow: 0px 0px 12px -3px black;
   background-color:#599bb3;
-  border:1px solid #29668f;
+  border:2px solid black;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
@@ -17,11 +17,13 @@
   padding:31px 32px;
   text-decoration:none;
   text-shadow:0px 1px 0px #3d768a;
+  margin-bottom: 3px;
 }
 .btn_1:hover {
   background-color:#408c99;
 }
 .btn_1:active {
+  background-color:black;
   position:relative;
   top:1px;
 }
@@ -33,9 +35,9 @@
 .btn_2 {
   -moz-box-shadow: 0px 0px 12px -3px #54a3f7;
   -webkit-box-shadow: 0px 0px 12px -3px #54a3f7;
-  box-shadow: 0px 0px 12px -3px #54a3f7;
+  box-shadow: 0px 0px 12px -3px black;
   background-color:#007dc1;
-  border:1px solid #124d77;
+  border:2px solid black;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
@@ -45,11 +47,13 @@
   padding:31px 32px;
   text-decoration:none;
   text-shadow:0px 1px 0px #154682;
+  margin-bottom: 5px;
 }
 .btn_2:hover {
   background-color:#0061a7;
 }
 .btn_2:active {
+  background-color:black;
   position:relative;
   top:1px;
 }
@@ -61,9 +65,9 @@
 .btn_3 {
   -moz-box-shadow: 0px 0px 12px -3px #3dc21b;
   -webkit-box-shadow: 0px 0px 12px -3px #3dc21b;
-  box-shadow: 0px 0px 12px -3px #3dc21b;
-  background-color:#44c767;
-  border:1px solid #18ab29;
+  box-shadow: 0px 0px 12px -3px black;
+  background-color:#e74c3c;
+  border:2px solid black;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
@@ -73,11 +77,13 @@
   padding:31px 32px;
   text-decoration:none;
   text-shadow:0px 1px 0px #2f6627;
+  margin-bottom: 5px;
 }
 .btn_3:hover {
-  background-color:#5cbf2a;
+  background-color:#c0392b;
 }
 .btn_3:active {
+  background-color:black;
   position:relative;
   top:1px;
 }
@@ -91,9 +97,9 @@
 .btn_4 {
   -moz-box-shadow: 0px 0px 12px -3px #8dab79;
   -webkit-box-shadow: 0px 0px 12px -3px #8dab79;
-  box-shadow: 0px 0px 12px -3px #8dab79;
-  background-color:#77d42a;
-  border:1px solid #000000;
+  box-shadow: 0px 0px 12px -3px black;
+  background-color:#9b59b6;
+  border:2px solid black;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
@@ -103,11 +109,13 @@
   padding:31px 32px;
   text-decoration:none;
   text-shadow:0px 1px 0px #030500;
+  margin-bottom: 3px;
 }
 .btn_4:hover {
-  background-color:#5cb811;
+  background-color:#8e44ad;
 }
 .btn_4:active {
+  background-color:black;
   position:relative;
   top:1px;
 }

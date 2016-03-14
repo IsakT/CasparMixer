@@ -3,6 +3,42 @@
     // When side loads, get the caspar IP and display it
      display_caspar_ip()
 
+     display_button_name("btn1_0")
+     display_button_name("btn1_1")
+     display_button_name("btn1_2")
+     display_button_name("btn1_3")
+     display_button_name("btn1_4")
+     display_button_name("btn1_5")
+     display_button_name("btn1_6")
+     display_button_name("btn1_7")
+
+     display_button_name("btn2_0")
+     display_button_name("btn2_1")
+     display_button_name("btn2_2")
+     display_button_name("btn2_3")
+     display_button_name("btn2_4")
+     display_button_name("btn2_5")
+     display_button_name("btn2_6")
+     display_button_name("btn2_7")
+
+     display_button_name("btn3_0")
+     display_button_name("btn3_1")
+     display_button_name("btn3_2")
+     display_button_name("btn3_3")
+     display_button_name("btn3_4")
+     display_button_name("btn3_5")
+     display_button_name("btn3_6")
+     display_button_name("btn3_7")
+
+     display_button_name("btn4_0")
+     display_button_name("btn4_1")
+     display_button_name("btn4_2")
+     display_button_name("btn4_3")
+     display_button_name("btn4_4")
+     display_button_name("btn4_5")
+     display_button_name("btn4_6")
+     display_button_name("btn4_7")
+
      // ************CASPAR IP UPDATE************
 
      $('.casparip_update').click(function(){
@@ -45,6 +81,8 @@
 
 
      // ********** GRAPHICS BUTTON ******************
+
+
 
      // GET BUTTON DATA
      $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
@@ -133,5 +171,37 @@
 		      url:"/update/button_data",
 		      data: { button_name: button_name, template: template, button_id: button_id, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
 	    	});
+
+      display_button_name(button_id)
 	 });
+
+   function display_button_name(id) {
+          $.ajax({
+            method: "GET",
+            url: "/get/button_data",
+            data: { id: id }
+          })
+          
+          // Add the caspar IP to the label
+          .done(function( msg ) {
+
+              // Parse the response.
+              var json = jQuery.parseJSON(msg);
+
+              // Iterate the JSON and add the data to the form in graphics layout.
+              $.each(json, function(n, elem) {
+
+                  if(n=="button_name" && elem==""){
+
+                    $('#'+id).text("EDIT");
+                  }
+                  else if (n=="button_name")
+                  {
+                    $('#'+id).text(elem);
+                  }
+              }
+          );
+        })
+     };
+
  });
