@@ -1,21 +1,12 @@
 ---
-:button_name:
-- Rullstolsrikard
-:template:
-- lower3rds
+:button_name: ''
+:template: ''
 :button_id:
 - btn2_0
-:f0:
-- Rullstolsrikard
-:f1:
-- Rullstolsrikard
-:f2:
-- Rullstolsrikard
-:f3:
-- Rullstolsrikard
-:f4:
-- Rullstolsrikard
-:f5:
-- Rullstolsrikard
-:f6:
-- Rullstolsrikard
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''

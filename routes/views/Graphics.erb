@@ -19,6 +19,7 @@
 			<button type="button" class="btn_1" id="btn1_5">EDIT</button>
 			<button type="button" class="btn_1" id="btn1_6">EDIT</button>
 			<button type="button" class="btn_1" id="btn1_7">EDIT</button>
+			<button type="button" class="btn_1 green" id="">PLAY</button>
 		</div>
 
 		<div class="btn-group col-lg-6">
@@ -31,6 +32,7 @@
 			<button type="button" class="btn_2" id="btn2_5">EDIT</button>
 			<button type="button" class="btn_2" id="btn2_6">EDIT</button>
 			<button type="button" class="btn_2" id="btn2_7">EDIT</button>
+			<button type="button" class="btn_1 green" id="">STOP</button>
 		</div>
 
 		<div class="btn-group col-lg-6">
@@ -43,6 +45,7 @@
 			<button type="button" class="btn_3" id="btn3_5">EDIT</button>
 			<button type="button" class="btn_3" id="btn3_6">EDIT</button>
 			<button type="button" class="btn_3" id="btn3_7">EDIT</button>
+			<button type="button" class="btn_1 green" id="">REMOVE</button>
 		</div>
 
 		<div class="btn-group col-lg-6">
@@ -55,6 +58,7 @@
 			<button type="button" class="btn_4" id="btn4_5">EDIT</button>
 			<button type="button" class="btn_4" id="btn4_6">EDIT</button>
 			<button type="button" class="btn_4" id="btn4_7">EDIT</button>
+			<button type="button" class="btn_1 green" id="">CLEAR</button>
 		</div>
 	</div>
 
@@ -70,8 +74,12 @@
 		    <input type="text" class="form-control" id="template">
 		  </div>
 		  <div class="form-group">
-		    <label for="button_id">Button ID:</label>
-		    <input type="text" class="form-control" id="button_id">
+		    <label for="layer">Layer:</label>
+		    <input type="text" class="form-control" id="layer">
+		  </div>
+		  <div class="form-group">
+		    <label for="button_id"><!-- Button ID: --></label>
+		    <input type="hidden" class="form-control" id="button_id">
 		  </div>
 		</form>
 
@@ -112,9 +120,11 @@
 		</form>
 		<button id="Ajax_button" class="btn btn-info btn-lg">SAVE</button>
 		<button class="btn btn-success btn-lg ">PLAY</button>
-		<button class="btn btn-success btn-lg ">NEXT</button>
 		<button class="btn btn-success btn-lg ">STOP</button>
-		<button class="btn btn-success btn-lg ">CLEAR ALL</button>
+		<button class="btn btn-success btn-lg ">NEXT</button>
+		<button class="btn btn-success btn-lg ">REMOVE</button>
+		<button class="btn btn-success btn-lg ">CLEAR</button>
+		<button class="btn btn-success btn-lg ">CG-Update</button>
 		<button id="clear_data" class="btn btn-danger btn-lg pull-right">Clear data</button>
 	</div>
 

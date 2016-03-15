@@ -132,3 +132,7 @@
 .green {
   background-color: green;
 }
+
+.green:hover {
+  background-color:black;
+}
