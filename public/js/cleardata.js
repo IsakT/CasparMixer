@@ -3,8 +3,8 @@ $('#clear_data').click(function() {
     var button_id = $('#button_id').val();
 
     clear_button_data(button_id)
-
     display_button_name(button_id)
+    display_button_data(button_id)
 
 });
 

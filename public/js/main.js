@@ -51,75 +51,18 @@
 
 
      // GET AND DISPLAY BUTTON DATA
-     $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
+         $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
 
-      $('#status_button').text("Try again.");
+            $('#status_button').text("Try again.");
 
-     	var id = $(this).attr('id');
+           	var button_id = $(this).attr('id');
 
-     	// add button ID to the forms
-     	$('#button_id').val(id);
+           	// add button ID to the forms
+           	$('#button_id').val(button_id);
 
-     	$.ajax({
-          method: "GET",
-          url: "/get/button_data",
-          data: { id: id }
-        })
-        	// Add button data to the forms
-          .done(function( msg ) {
+           	display_button_data(button_id);
 
-              // Parse the response.
-              var json = jQuery.parseJSON(msg);
-
-              // Iterate the JSON and add the data to the forms in graphics layout.
-              $.each(json, function(n, elem) {
-
-                switch(n)
-                {
-                  case "button_name":
-                    $('#button_name').val(elem);
-                    break;
-
-                  case "template":
-                    $('#template').val(elem);
-                    break;
-
-                  case "button_id":
-                    $('#button_id').val(elem);
-                    break;
-
-                  case "f0":
-                    $('#f0').val(elem);
-                    break;
-
-                  case "f1":
-                    $('#f1').val(elem);
-                    break;
-
-                  case "f2":
-                    $('#f2').val(elem);
-                    break;
-
-                  case "f3":
-                    $('#f3').val(elem);
-                    break;
-
-                  case "f4":
-                    $('#f4').val(elem);
-                    break;
-
-                  case "f5":
-                    $('#f5').val(elem);
-                    break;
-
-                  case "f6":
-                    $('#f6').val(elem);
-                    break;
-                }
-                $('#status_button').text("Done!");
-              });
-          })
-	 });
+    	 });
 
     	 // UPDATE BUTTON DATA
     	 $('#Ajax_button').click(function() {
@@ -148,11 +91,11 @@
     	 });
 
 
-       function display_button_name(id) {
+       function display_button_name(button_id) {
               $.ajax({
                 method: "GET",
                 url: "/get/button_data",
-                data: { id: id }
+                data: { button_id: button_id }
               })
               
               // Add the caspar IP to the label
@@ -166,16 +109,85 @@
 
                       if(n=="button_name" && elem==""){
 
-                        $('#'+id).text("EDIT");
+                        $('#'+button_id).text("EDIT");
                       }
                       else if (n=="button_name")
                       {
-                        $('#'+id).text(elem);
+                        $('#'+button_id).text(elem);
                       }
                   }
               );
             })
          };
+
+         function display_button_data(button_id) {
+
+            $('#status_button').text("Try again.");
+
+              $.ajax({
+              method: "GET",
+              url: "/get/button_data",
+              data: { button_id: button_id }
+            })
+              // Add button data to the forms
+              .done(function( msg ) {
+
+                  // Parse the response.
+                  var json = jQuery.parseJSON(msg);
+
+                  // Iterate the JSON and add the data to the forms in graphics layout.
+                  $.each(json, function(n, elem) {
+
+                    switch(n)
+                    {
+                      case "button_name":
+                        $('#button_name').val(elem);
+                        break;
+
+                      case "template":
+                        $('#template').val(elem);
+                        break;
+
+                      case "button_id":
+                        $('#button_id').val(elem);
+                        break;
+
+                      case "f0":
+                        $('#f0').val(elem);
+                        break;
+
+                      case "f1":
+                        $('#f1').val(elem);
+                        break;
+
+                      case "f2":
+                        $('#f2').val(elem);
+                        break;
+
+                      case "f3":
+                        $('#f3').val(elem);
+                        break;
+
+                      case "f4":
+                        $('#f4').val(elem);
+                        break;
+
+                      case "f5":
+                        $('#f5').val(elem);
+                        break;
+
+                      case "f6":
+                        $('#f6').val(elem);
+                        break;
+                    }
+
+                  });
+              });
+
+            $('#status_button').text("Loaded!");
+
+
+          };
 
 
          function clear_button_data(button_id) {
@@ -191,4 +203,4 @@
             $('#status_button').text("Done!");
 
 
-            };
+          };

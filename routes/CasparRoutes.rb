@@ -45,7 +45,7 @@ class AdminCaspar < Router
 
 	get "/get/button_data" do
 
-		data_yml = YAML.load_file('db/graphic_buttons/'+params[:id]+'.yml')
+		data_yml = YAML.load_file('db/graphic_buttons/'+params[:button_id]+'.yml')
 
 		if data_yml 
 
