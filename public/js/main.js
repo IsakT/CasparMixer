@@ -197,3 +197,37 @@
               })
 
           };
+
+     // *******************************************
+
+     //            CASPAR FUNCTIONS and EVENTS
+ 
+     // *******************************************
+
+      $('.btn_1, .btn_2, .btn_3, .btn_4').click(function() {
+
+          var template =  $('#template').val();
+          var layer =  $('#layer').val();
+
+          var f0 = $('#f0').val();
+          var f1 = $('#f1').val();
+          var f2 = $('#f2').val();
+          var f3 = $('#f3').val();
+          var f4 = $('#f4').val();
+          var f5 = $('#f5').val();
+          var f6 = $('#f6').val();
+
+          CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);
+
+      });
+
+
+     function CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6) {
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_ADD",
+                data: { layer: layer, template: template, f0: f0, f1: f1, f2: f2, f3: f3, f4: f4, f5: f5, f6: f6 }
+              })
+
+          };
