@@ -51,17 +51,34 @@
 
 
      // GET AND DISPLAY BUTTON DATA
-         $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
-
-            $('#status_button').text("Try again.");
+         $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){       
 
            	var button_id = $(this).attr('id');
 
            	// add button ID to the forms
            	$('#button_id').val(button_id);
 
-           	display_button_data(button_id);
+            // JQUERY DEFERRED 
+            var Displaying_data = display_button_data(button_id)
 
+            $.when(Displaying_data).done(function () {
+
+                console.log("Display data is done! Proceeding...");
+
+              var template =  $('#template').val();
+              var layer =  $('#layer').val();
+              var f0 = $('#f0').val();
+              var f1 = $('#f1').val();
+              var f2 = $('#f2').val();
+              var f3 = $('#f3').val();
+              var f4 = $('#f4').val();
+              var f5 = $('#f5').val();
+              var f6 = $('#f6').val();
+
+              // CG ADD Command
+              CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);
+
+            });
     	 });
 
     	 // UPDATE BUTTON DATA
@@ -83,6 +100,8 @@
     		      url:"/update/button_data",
     		      data: { button_name: button_name, template: template, button_id: button_id, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
     	    	});
+
+          // Here would be good to wait for the ajax call to finish before proceeding.
 
           display_button_name(button_id)
 
@@ -120,7 +139,7 @@
 
          function display_button_data(button_id) {
 
-            $('#status_button').text("Try again.");
+            var dfd = jQuery.Deferred();
 
               $.ajax({
               method: "GET",
@@ -176,16 +195,16 @@
 
                       case "f6":
                         $('#f6').val(elem);
+                        dfd.resolve();
+                        console.log("Log after resolve");
                         break;
-                    }
+                    } // Case Switch
+                });  // Each loop            
+              }); // AJAX .done
 
-                  });
-              });
-
-            $('#status_button').text("Button data loaded");
-
-
-          };
+           console.log("logging promise");
+           return dfd.promise();
+        };
 
 
          function clear_button_data(button_id) {
@@ -203,23 +222,6 @@
      //            CASPAR FUNCTIONS and EVENTS
  
      // *******************************************
-
-      $('.btn_1, .btn_2, .btn_3, .btn_4').click(function() {
-
-          var template =  $('#template').val();
-          var layer =  $('#layer').val();
-
-          var f0 = $('#f0').val();
-          var f1 = $('#f1').val();
-          var f2 = $('#f2').val();
-          var f3 = $('#f3').val();
-          var f4 = $('#f4').val();
-          var f5 = $('#f5').val();
-          var f6 = $('#f6').val();
-
-          CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);
-
-      });
 
 
      function CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6) {
