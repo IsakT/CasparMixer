@@ -101,7 +101,7 @@ class AdminCaspar < Router
 		f5 = casparxml("f5","text",field5)
 		f6 = casparxml("f6","text",field6)
 
-		# Remove this IF statement later.
+		# Remove this IF statement later. Not needed when I use JQuery deferred objects.
 		if template
 			cgconnect('CG 1 ADD 1 '+ template + " 0 " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
 		end
