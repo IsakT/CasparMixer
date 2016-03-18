@@ -1,12 +1,21 @@
 ---
-:button_name: ''
-:template: ''
+:button_name:
+- status
+:template:
+- ''
 :button_id:
 - btn1_1
-:f0: ''
-:f1: ''
-:f2: ''
-:f3: ''
-:f4: ''
-:f5: ''
-:f6: ''
+:f0:
+- ''
+:f1:
+- ''
+:f2:
+- ''
+:f3:
+- ''
+:f4:
+- ''
+:f5:
+- ''
+:f6:
+- ''

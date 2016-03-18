@@ -130,8 +130,8 @@
                 console.log("Data from F6 taken.");
 
                 // CG ADD Command
-                console.log("Calling CG_ADD...");
-                CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);  
+                // console.log("Calling CG_ADD...");
+                // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);  
 
             }); // Promise   
 
@@ -140,42 +140,27 @@
     	 // UPDATE BUTTON DATA
     	 $('#Ajax_button').click(function() {
 
-    		 	var button_name = $('#button_name').val();
-    		 	var template =	$('#template').val();
-    		 	var button_id = $('#button_id').val();
-    		 	var f0 = $('#f0').val();
-    		 	var f1 = $('#f1').val();
-    		 	var f2 = $('#f2').val();
-    		 	var f3 = $('#f3').val();
-    		 	var f4 = $('#f4').val();
-    		 	var f5 = $('#f5').val();
-    		 	var f6 = $('#f6').val();
+          var button_id = $('#button_id').val();
 
-          // Break out this ajax call to its own function
-    		 	$.ajax({
-    		      method: "POST",
-    		      url:"/update/button_data",
-    		      data: { button_name: button_name, template: template, button_id: button_id, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
-    	    	});
+    		 	var button_data = update_button_data(button_id);
 
-          display_button_name(button_id)
+          button_data.done(function() { display_button_name(button_id) });
 
     	 });
 
 
        function display_button_name(button_id) {
 
-              $.ajax({
-                method: "GET",
-                url: "/get/button_data",
-                data: { button_id: button_id }
-              })
-              
-              // Add the caspar IP to the label
-              .done(function( msg ) {
+        console.log("display_button_name() invoked");
+
+              var button_data = get_button_data(button_id);
+
+              button_data.done(function( data ) {
+
+                console.log("Get button data is done. Displaying button name...");
 
                   // Parse the response.
-                  var json = jQuery.parseJSON(msg);
+                  var json = jQuery.parseJSON(data);
 
                   // Iterate the JSON and add the data to the form in graphics layout.
                   $.each(json, function(n, elem) {
@@ -193,8 +178,34 @@
             })
          };
 
+         // UPDATE BUTTON DATA
+         function update_button_data(button_id) {
+
+          console.log("update_button_data() invoked");
+
+          var button_name = $('#button_name').val();
+          var template =  $('#template').val();
+          var button_id = $('#button_id').val();
+          var f0 = $('#f0').val();
+          var f1 = $('#f1').val();
+          var f2 = $('#f2').val();
+          var f3 = $('#f3').val();
+          var f4 = $('#f4').val();
+          var f5 = $('#f5').val();
+          var f6 = $('#f6').val();
+
+          return $.ajax({
+              method: "POST",
+              url:"/update/button_data",
+              data: { button_name: button_name, template: template, button_id: button_id, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
+            });        
+
+          };
+
          // GET BUTTON DATA
          function get_button_data(button_id) {
+
+            console.log("get_button_data() invoked");
 
               return $.ajax({
                 method: "GET",
@@ -206,6 +217,8 @@
 
          // CLEAR BUTTON DATA
          function clear_button_data(button_id) {
+
+          console.log("clear_button_data() invoked");
 
               $.ajax({
                 method: "POST",

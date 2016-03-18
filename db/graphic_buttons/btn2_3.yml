@@ -1,12 +1,21 @@
 ---
-:button_name: ''
-:template: ''
+:button_name:
+- button_data_promise
+:template:
+- ''
 :button_id:
 - btn2_3
-:f0: ''
-:f1: ''
-:f2: ''
-:f3: ''
-:f4: ''
-:f5: ''
-:f6: ''
+:f0:
+- button_data_promise
+:f1:
+- button_data_promise
+:f2:
+- button_data_promise
+:f3:
+- button_data_promise
+:f4:
+- button_data_promise
+:f5:
+- button_data_promise
+:f6:
+- button_data_promise
