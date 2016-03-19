@@ -103,7 +103,7 @@ class AdminCaspar < Router
 
 		# Remove this IF statement later. Not needed when I use JQuery deferred objects.
 		if template
-			cgconnect('CG 1 ADD 1 '+ template + " 0 " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
+			cgconnect('CG 1 ADD 1 '+ template + " 1 " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
 		end
 
 	end	
@@ -112,7 +112,13 @@ class AdminCaspar < Router
 
 		layer = params[:layer]
 
-		cgconnect('CG 1 PLAY ' + 1)
+		cgconnect('CG 1 PLAY 1')
+
+		# if layer == "" || layer == nil
+		#  	cgconnect('CG 1 PLAY ' + 1)
+		# else
+		# 	cgconnect('CG 1 PLAY ' + template)
+		# end
 
 	end	
 

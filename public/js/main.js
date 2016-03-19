@@ -156,8 +156,6 @@
             // Only when AJAX call has finished (Promise), then proceed with this code block:
             button_data_promise.done(function (data) {
 
-              console.log("Getting data is done! Proceeding...");
-
               // Parse the response.
                   var json = jQuery.parseJSON(data);
 
@@ -204,7 +202,6 @@
 
                       case "f6":
                         $('#f6').val(elem);
-                        console.log("F6 has been loaded with data");
                         break;
                     } // Case Switch
                 });  // Each loop          
@@ -267,8 +264,6 @@
          // GET BUTTON DATA
          function get_button_data(button_id) {
 
-            console.log("get_button_data() invoked");
-
               return $.ajax({
                 method: "GET",
                 url: "/get/button_data",
@@ -309,5 +304,19 @@
               })
 
               console.log("CG ADD done.");
+
+          };
+
+    function CG_PLAY(layer) {
+
+              console.log("CG_PLAY started.");
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_PLAY",
+                data: { layer: layer}
+              })
+
+              console.log("CG PLAY done.");
 
           };
