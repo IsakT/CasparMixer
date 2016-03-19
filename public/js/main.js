@@ -50,15 +50,49 @@
      // *******************************************
 
 
-     // DISPLAY BUTTON DATA
+     // GRAPHIC BUTTON CLICK EVENT
          $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){       
 
            	var button_id = $(this).attr('id');
 
            	// add button ID to the forms
-           	$('#button_id').val(button_id);
+           	$('#button_id').val(button_id); 
 
-            // JQUERY PROMISE
+            display_button_data(button_id);                   
+
+            // Get the data from the forms
+            // var template =  $('#template').val();
+            // var layer =  $('#layer').val();
+            // var f0 = $('#f0').val();
+            // var f1 = $('#f1').val();
+            // var f2 = $('#f2').val();
+            // var f3 = $('#f3').val();
+            // var f4 = $('#f4').val();
+            // var f5 = $('#f5').val();
+            // var f6 = $('#f6').val();
+            // console.log("Data from F6 taken.");
+
+            // CG ADD Command
+            // console.log("Calling CG_ADD...");
+            // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);  
+
+    	 });
+
+    	 // UPDATE BUTTON DATA
+    	 $('#Ajax_button').click(function() {
+
+          var button_id = $('#button_id').val();
+
+    		 	var button_data = update_button_data(button_id);
+
+          button_data.done(function() { display_button_name(button_id) });
+
+    	 });
+
+
+       function display_button_data(button_id) {
+
+              // JQUERY PROMISE
             var button_data_promise = get_button_data(button_id);
 
             // Only when AJAX call has finished (Promise), then proceed with this code block:
@@ -116,38 +150,9 @@
                         break;
                     } // Case Switch
                 });  // Each loop          
-
-                // Get the data from the forms
-                var template =  $('#template').val();
-                var layer =  $('#layer').val();
-                var f0 = $('#f0').val();
-                var f1 = $('#f1').val();
-                var f2 = $('#f2').val();
-                var f3 = $('#f3').val();
-                var f4 = $('#f4').val();
-                var f5 = $('#f5').val();
-                var f6 = $('#f6').val();
-                console.log("Data from F6 taken.");
-
-                // CG ADD Command
-                // console.log("Calling CG_ADD...");
-                // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);  
-
             }); // Promise   
 
-    	 });
-
-    	 // UPDATE BUTTON DATA
-    	 $('#Ajax_button').click(function() {
-
-          var button_id = $('#button_id').val();
-
-    		 	var button_data = update_button_data(button_id);
-
-          button_data.done(function() { display_button_name(button_id) });
-
-    	 });
-
+         };
 
        function display_button_name(button_id) {
 
@@ -185,7 +190,6 @@
 
           var button_name = $('#button_name').val();
           var template =  $('#template').val();
-          var button_id = $('#button_id').val();
           var f0 = $('#f0').val();
           var f1 = $('#f1').val();
           var f2 = $('#f2').val();
@@ -220,9 +224,9 @@
 
           console.log("clear_button_data() invoked");
 
-              $.ajax({
+              return $.ajax({
                 method: "POST",
-                url: "/delete/button_data",
+                url: "/delete/button_data/?",
                 data: { button_id: button_id }
               })
 
