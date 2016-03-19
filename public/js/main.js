@@ -58,24 +58,82 @@
            	// add button ID to the forms
            	$('#button_id').val(button_id); 
 
-            display_button_data(button_id);                   
+            // JQUERY PROMISE
+            var button_data_promise = get_button_data(button_id);
 
-            // Get the data from the forms
-            // var template =  $('#template').val();
-            // var layer =  $('#layer').val();
-            // var f0 = $('#f0').val();
-            // var f1 = $('#f1').val();
-            // var f2 = $('#f2').val();
-            // var f3 = $('#f3').val();
-            // var f4 = $('#f4').val();
-            // var f5 = $('#f5').val();
-            // var f6 = $('#f6').val();
-            // console.log("Data from F6 taken.");
+            // Only when AJAX call has finished (Promise), then proceed with this code block:
+            button_data_promise.done(function (data) {
 
-            // CG ADD Command
-            // console.log("Calling CG_ADD...");
-            // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);  
+              console.log("Getting data is done! Proceeding...");
 
+              // Parse the response.
+                  var json = jQuery.parseJSON(data);
+
+                  // Iterate the JSON and add the data to the forms in graphics layout.
+                  $.each(json, function(n, elem) {
+
+                    switch(n)
+                    {
+                      case "button_name":
+                        $('#button_name').val(elem);
+                        break;
+
+                      case "template":
+                        $('#template').val(elem);
+                        break;
+
+                      case "button_id":
+                        $('#button_id').val(elem);
+                        break;
+
+                      case "f0":
+                        $('#f0').val(elem);
+                        break;
+
+                      case "f1":
+                        $('#f1').val(elem);
+                        break;
+
+                      case "f2":
+                        $('#f2').val(elem);
+                        break;
+
+                      case "f3":
+                        $('#f3').val(elem);
+                        break;
+
+                      case "f4":
+                        $('#f4').val(elem);
+                        break;
+
+                      case "f5":
+                        $('#f5').val(elem);
+                        break;
+
+                      case "f6":
+                        $('#f6').val(elem);
+                        console.log("F6 has been loaded with data");
+                        break;
+                    } // Case Switch
+                });  // Each loop      
+
+              // Get the data from the forms
+              var template =  $('#template').val();
+              var layer =  $('#layer').val();
+              var f0 = $('#f0').val();
+              var f1 = $('#f1').val();
+              var f2 = $('#f2').val();
+              var f3 = $('#f3').val();
+              var f4 = $('#f4').val();
+              var f5 = $('#f5').val();
+              var f6 = $('#f6').val();
+              console.log("Data from F6 taken.");
+
+              // CG ADD Command
+              console.log("Calling CG_ADD...");
+              CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);      
+
+            }); // Promise   
     	 });
 
     	 // UPDATE BUTTON DATA

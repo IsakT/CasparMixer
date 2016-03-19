@@ -108,6 +108,15 @@ class AdminCaspar < Router
 
 	end	
 
+	get '/Caspar/CG_PLAY' do
+
+		layer = params[:layer]
+
+		cgconnect('CG 1 PLAY ' + 1)
+
+	end	
+
+
 	get "/get/caspar_ip2" do
 
 	end
