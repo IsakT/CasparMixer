@@ -363,16 +363,30 @@
 
           }; 
 
-    function CG_CLEAR(layer) {
+    function CG_CLEAR() {
 
               console.log("CG_CLEAR started.");
 
               $.ajax({
                 method: "GET",
                 url: "/Caspar/CG_CLEAR",
-                data: { layer: layer}
+                data: {}
               })
 
               console.log("CG_CLEAR done.");
 
-          };       
+          };  
+    
+    function CG_UPDATE(layer, f0, f1, f2, f3, f4, f5, f6) {
+
+              console.log("CG_UPDATE started.");
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_UPDATE",
+                data: { layer: layer, f0: f0, f1: f1, f2: f2, f3: f3, f4: f4, f5: f5, f6: f6 }
+              })
+
+              console.log("CG UPDATE done.");
+
+          };           

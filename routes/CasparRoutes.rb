@@ -169,5 +169,30 @@ class AdminCaspar < Router
 
 	end	
 
+	get '/Caspar/CG_UPDATE' do
+
+		layer = params[:layer]
+
+		field0 = params[:f0]
+		field1 = params[:f1]
+		field2 = params[:f2]
+		field3 = params[:f3]
+		field4 = params[:f4]
+		field5 = params[:f5]
+		field6 = params[:f6]
+
+
+		f0 = casparxml("f0","text",field0)
+		f1 = casparxml("f1","text",field1)
+		f2 = casparxml("f2","text",field2)
+		f3 = casparxml("f3","text",field3)
+		f4 = casparxml("f4","text",field4)
+		f5 = casparxml("f5","text",field5)
+		f6 = casparxml("f6","text",field6)
+
+		cgconnect('CG 1 UPDATE 1 ' + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
+
+	end	
+
 
 end
