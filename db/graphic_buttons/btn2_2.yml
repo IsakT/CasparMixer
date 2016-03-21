@@ -1,12 +1,21 @@
 ---
-:button_name: ''
-:template: ''
+:button_name:
+- KoN lower3rds
+:template:
+- test2
 :button_id:
 - btn2_2
-:f0: ''
-:f1: ''
-:f2: ''
-:f3: ''
-:f4: ''
-:f5: ''
-:f6: ''
+:f0:
+- Lolwut Lolwut Lolwut Lolwut Lolwut
+:f1:
+- Lolwut Lolwut Lolwut Lolwut Lolwut
+:f2:
+- Lolwut
+:f3:
+- Lolwut
+:f4:
+- ''
+:f5:
+- ''
+:f6:
+- ''

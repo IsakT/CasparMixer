@@ -101,9 +101,8 @@ class AdminCaspar < Router
 		f5 = casparxml("f5","text",field5)
 		f6 = casparxml("f6","text",field6)
 
-		# Remove this IF statement later. Not needed when I use JQuery deferred objects.
 		if template
-			cgconnect('CG 1 ADD 1 '+ template + " 1 " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
+			cgconnect('CG 1 ADD 1 '+ template + " 0 " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
 		end
 
 	end	
@@ -117,14 +116,25 @@ class AdminCaspar < Router
 		# if layer == "" || layer == nil
 		#  	cgconnect('CG 1 PLAY ' + 1)
 		# else
-		# 	cgconnect('CG 1 PLAY ' + template)
+		# 	cgconnect('CG 1 PLAY ' + layer)
+		# end
+
+	end	
+
+	get '/Caspar/CG_STOP' do
+
+		layer = params[:layer]
+
+		cgconnect('CG 1 STOP 1')
+
+		# if layer == "" || layer == nil
+		#  	cgconnect('CG 1 STOP ' + 1)
+		# else
+		# 	cgconnect('CG 1 STOP ' + layer)
 		# end
 
 	end	
 
 
-	get "/get/caspar_ip2" do
-
-	end
 
 end

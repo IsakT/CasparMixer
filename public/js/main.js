@@ -293,7 +293,7 @@
      // *******************************************
 
 
-     function CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6) {
+    function CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6) {
 
               console.log("CG_ADD started.");
 
@@ -318,5 +318,19 @@
               })
 
               console.log("CG PLAY done.");
+
+          };
+
+    function CG_STOP(layer) {
+
+              console.log("CG_STOP started.");
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_STOP",
+                data: { layer: layer}
+              })
+
+              console.log("CG STOP done.");
 
           };
