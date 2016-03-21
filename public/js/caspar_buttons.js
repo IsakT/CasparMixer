@@ -29,3 +29,9 @@ $('.caspar_remove').click(function() {
 	CG_REMOVE(layer);
 
 });
+
+$('.caspar_clear').click(function() {
+
+	CG_CLEAR();
+
+});

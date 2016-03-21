@@ -362,3 +362,17 @@
               console.log("CG_REMOVE done.");
 
           }; 
+
+    function CG_CLEAR(layer) {
+
+              console.log("CG_CLEAR started.");
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_CLEAR",
+                data: { layer: layer}
+              })
+
+              console.log("CG_CLEAR done.");
+
+          };       

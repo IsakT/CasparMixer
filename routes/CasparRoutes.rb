@@ -163,7 +163,11 @@ class AdminCaspar < Router
 
 	end	
 
+	get '/Caspar/CG_CLEAR' do
 
+		cgconnect('CG 1 CLEAR 1')
+
+	end	
 
 
 end
