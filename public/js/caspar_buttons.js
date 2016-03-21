@@ -13,3 +13,11 @@ $('.caspar_stop').click(function() {
 	CG_STOP(layer);
 
 });
+
+$('.caspar_next').click(function() {
+
+	var layer = $('#layer').val();
+
+	CG_NEXT(layer);
+
+});

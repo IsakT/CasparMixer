@@ -135,6 +135,21 @@ class AdminCaspar < Router
 
 	end	
 
+	get '/Caspar/CG_NEXT' do
+
+		layer = params[:layer]
+
+		cgconnect('CG 1 NEXT 1')
+
+		# if layer == "" || layer == nil
+		#  	cgconnect('CG 1 NEXT ' + 1)
+		# else
+		# 	cgconnect('CG 1 NEXT ' + layer)
+		# end
+
+	end	
+
+
 
 
 end

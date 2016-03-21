@@ -334,3 +334,17 @@
               console.log("CG STOP done.");
 
           };
+
+    function CG_NEXT(layer) {
+
+              console.log("CG_NEXT started.");
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_NEXT",
+                data: { layer: layer}
+              })
+
+              console.log("CG_NEXT done.");
+
+          };      
