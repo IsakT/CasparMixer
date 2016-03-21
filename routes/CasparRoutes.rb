@@ -81,6 +81,8 @@ class AdminCaspar < Router
 
 	get '/Caspar/CG_ADD' do
 
+		autoplay = params[:autoplay]
+
 		template = params[:template]
 		layer = params[:layer]
 

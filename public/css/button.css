@@ -155,3 +155,15 @@
 .green:hover {
   background-color:black;
 }
+
+.red {
+  background-color: red;
+}
+
+.red:hover {
+  background-color: red;
+}
+
+.autoplaychar:after {
+    content: "\0398"
+}
