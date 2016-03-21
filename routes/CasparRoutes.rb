@@ -149,6 +149,20 @@ class AdminCaspar < Router
 
 	end	
 
+	get '/Caspar/CG_REMOVE' do
+
+		layer = params[:layer]
+
+		cgconnect('CG 1 REMOVE 1')
+
+		# if layer == "" || layer == nil
+		#  	cgconnect('CG 1 REMOVE ' + 1)
+		# else
+		# 	cgconnect('CG 1 REMOVE ' + layer)
+		# end
+
+	end	
+
 
 
 

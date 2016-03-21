@@ -347,4 +347,18 @@
 
               console.log("CG_NEXT done.");
 
-          };      
+          };     
+
+    function CG_REMOVE(layer) {
+
+              console.log("CG_REMOVE started.");
+
+              $.ajax({
+                method: "GET",
+                url: "/Caspar/CG_REMOVE",
+                data: { layer: layer}
+              })
+
+              console.log("CG_REMOVE done.");
+
+          }; 

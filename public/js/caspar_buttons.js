@@ -21,3 +21,11 @@ $('.caspar_next').click(function() {
 	CG_NEXT(layer);
 
 });
+
+$('.caspar_remove').click(function() {
+
+	var layer = $('#layer').val();
+
+	CG_REMOVE(layer);
+
+});
