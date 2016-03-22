@@ -167,3 +167,7 @@
 .autoplaychar:after {
     content: "\0398"
 }
+
+.autoplay-enabled {
+  content: "";
+}

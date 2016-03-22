@@ -297,10 +297,16 @@
 
               console.log("CG_ADD started.");
 
+              var autoplay = 0;
+
+              if($('.autoplay').hasClass("autoplay-enabled")){
+                  autoplay = 1;
+              }
+
               $.ajax({
                 method: "GET",
                 url: "/Caspar/CG_ADD",
-                data: { layer: layer, template: template, f0: f0, f1: f1, f2: f2, f3: f3, f4: f4, f5: f5, f6: f6 }
+                data: { layer: layer, template: template, f0: f0, f1: f1, f2: f2, f3: f3, f4: f4, f5: f5, f6: f6, autoplay: autoplay }
               })
 
               console.log("CG ADD done.");

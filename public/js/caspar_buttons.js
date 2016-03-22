@@ -56,6 +56,6 @@ $('.caspar_update').click(function() {
 
 $('.autoplay').click(function() {
 
-	$('.autoplay').toggleClass("btn-danger autoplaychar");
+	$('.autoplay').toggleClass("btn-danger autoplaychar autoplay-enabled");
 
 });

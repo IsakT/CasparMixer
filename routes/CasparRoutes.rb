@@ -104,7 +104,7 @@ class AdminCaspar < Router
 		f6 = casparxml("f6","text",field6)
 
 		if template
-			cgconnect('CG 1 ADD 1 '+ template + " 0 " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
+			cgconnect('CG 1 ADD 1 '+ template + " "+ autoplay +" " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
 		end
 
 	end	
