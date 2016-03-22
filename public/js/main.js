@@ -51,7 +51,11 @@
 
 
      // GRAPHIC BUTTON CLICK EVENT
-         $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){       
+         $('.btn_1, .btn_2, .btn_3, .btn_4').click(function(){
+
+            $('.btn_1, .btn_2, .btn_3, .btn_4').removeClass("selected-button");       
+
+            $(this).addClass( "selected-button" );
 
            	var button_id = $(this).attr('id');
 
@@ -131,7 +135,7 @@
 
               // CG ADD Command
               console.log("Calling CG_ADD...");
-              CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);      
+              // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);      
 
             }); // Promise   
     	 });
