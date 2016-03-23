@@ -117,6 +117,7 @@
                       case "f6":
                         $('#f6').val(elem);
                         console.log("F6 has been loaded with data");
+                        $('#status_button').text("Loaded!");
                         break;
                     } // Case Switch
                 });  // Each loop      
@@ -133,6 +134,8 @@
               var f6 = $('#f6').val();
               console.log("Data from F6 taken.");
 
+              $(':button').prop('disabled', false);
+
               // CG ADD Command
               console.log("Calling CG_ADD...");
               // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);      
@@ -147,12 +150,19 @@
 
     		 	var button_data = update_button_data(button_id);
 
-          button_data.done(function() { display_button_name(button_id) });
+          button_data.done(function() { 
+            $('#status_button').text("Update done");
+            display_button_name(button_id) 
+
+            $(':button').prop('disabled', false);
+          });
 
     	 });
 
 
        function display_button_data(button_id) {
+
+        $(':button').prop('disabled', true);
 
               // JQUERY PROMISE
             var button_data_promise = get_button_data(button_id);
@@ -206,20 +216,28 @@
 
                       case "f6":
                         $('#f6').val(elem);
+                        $('#status_button').text("Loaded!");
+
                         break;
                     } // Case Switch
                 });  // Each loop          
             }); // Promise   
 
+            $(':button').prop('disabled', false);
+
          };
 
        function display_button_name(button_id) {
+
+        $(':button').prop('disabled', true);
 
         console.log("display_button_name() invoked");
 
               var button_data = get_button_data(button_id);
 
               button_data.done(function( data ) {
+
+                $('#status_button').text("Loaded!");
 
                 console.log("Get button data is done. Displaying button name...");
 
@@ -240,15 +258,20 @@
                   }
               );
             })
+
+              $(':button').prop('disabled', false);
          };
 
          // UPDATE BUTTON DATA
          function update_button_data(button_id) {
 
+          $(':button').prop('disabled', true);
           console.log("update_button_data() invoked");
+          $('#status_button').text("Updating button data 1/3");
 
           var button_name = $('#button_name').val();
           var template =  $('#template').val();
+          $('#status_button').text("Updating button data 2/3");
           var f0 = $('#f0').val();
           var f1 = $('#f1').val();
           var f2 = $('#f2').val();
@@ -256,6 +279,8 @@
           var f4 = $('#f4').val();
           var f5 = $('#f5').val();
           var f6 = $('#f6').val();
+
+          $('#status_button').text("Updating button data 3/3");
 
           return $.ajax({
               method: "POST",
@@ -267,6 +292,10 @@
 
          // GET BUTTON DATA
          function get_button_data(button_id) {
+
+            $(':button').prop('disabled', true);
+
+              $('#status_button').text("Loading button data...");
 
               return $.ajax({
                 method: "GET",
@@ -280,6 +309,7 @@
          function clear_button_data(button_id) {
 
           console.log("clear_button_data() invoked");
+          $('#status_button').text("Clearing button data...");
 
               return $.ajax({
                 method: "POST",
@@ -299,7 +329,10 @@
 
     function CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6) {
 
+
               console.log("CG_ADD started.");
+              
+              $('#status_button').text("CG ADD");
 
               var autoplay = 0;
 
@@ -319,7 +352,10 @@
 
     function CG_PLAY(layer) {
 
+
               console.log("CG_PLAY started.");
+
+              $('#status_button').text("CG PLAY");
 
               $.ajax({
                 method: "GET",
@@ -332,6 +368,8 @@
           };
 
     function CG_STOP(layer) {
+
+              $('#status_button').text("CG STOP");
 
               console.log("CG_STOP started.");
 
@@ -349,6 +387,8 @@
 
               console.log("CG_NEXT started.");
 
+              $('#status_button').text("CG NEXT");
+
               $.ajax({
                 method: "GET",
                 url: "/Caspar/CG_NEXT",
@@ -362,6 +402,8 @@
     function CG_REMOVE(layer) {
 
               console.log("CG_REMOVE started.");
+
+              $('#status_button').text("CG REMOVE");
 
               $.ajax({
                 method: "GET",
@@ -377,6 +419,8 @@
 
               console.log("CG_CLEAR started.");
 
+              $('#status_button').text("CG CLEAR");
+
               $.ajax({
                 method: "GET",
                 url: "/Caspar/CG_CLEAR",
@@ -390,6 +434,8 @@
     function CG_UPDATE(layer, f0, f1, f2, f3, f4, f5, f6) {
 
               console.log("CG_UPDATE started.");
+
+              $('#status_button').text("CG UPDATE");
 
               $.ajax({
                 method: "GET",

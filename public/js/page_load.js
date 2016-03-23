@@ -11,4 +11,6 @@ $(document).ready(function() {
        display_button_name(l);
      });
 
+     $(':button').prop('disabled', false);
+
 });
