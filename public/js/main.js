@@ -135,7 +135,7 @@
 
               // CG ADD Command
               console.log("Calling CG_ADD...");
-              CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);      
+              // CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);      
 
             }); // Promise   
     	 });
