@@ -21,7 +21,7 @@
 
   text-decoration:none;
   text-shadow:0px 1px 0px #154682;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   overflow: hidden;
 }
 .btn_1:hover {
@@ -79,7 +79,7 @@
 
 .btn_2:active {
   background-color:black;
-  /*position:relative;*/
+  position:relative;
   top:1px;
 }
 
@@ -211,5 +211,5 @@
 }
 
 .selected-button{
-    
+    border:4px solid black;
 }
