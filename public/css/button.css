@@ -165,7 +165,7 @@
 }
 
 .autoplaychar:after {
-    content: "\0398"
+    content: " enabled \0398"
 }
 
 .autoplay-enabled {

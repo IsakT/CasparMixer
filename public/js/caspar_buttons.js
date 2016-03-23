@@ -52,10 +52,20 @@ $('.caspar_update').click(function() {
               // CG ADD Command
               console.log("Calling CG_ADD...");
               CG_UPDATE(layer, f0, f1, f2, f3, f4, f5, f6);   
+
+              
 });
 
 $('.autoplay').click(function() {
 
-	$('.autoplay').toggleClass("btn-danger autoplaychar autoplay-enabled");
+	$('.autoplay').toggleClass("autoplaychar autoplay-enabled");
+
+	if($('.autoplay').hasClass("autoplay-enabled")){
+        $('#status_button').text("Autoplay enabled!");
+    }
+    else{
+    	$('#status_button').text("Autoplay disabled!");
+    }
+	
 
 });
