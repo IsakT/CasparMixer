@@ -7,18 +7,25 @@
 
      $('.casparip_update').click(function(){
 
-     	var caspar_ip = $('#InputCasparIP').val();
+       	var caspar_ip = $('#InputCasparIP').val();
+        
+        var promise = update_IP(caspar_ip);
 
-      // Save the new IP
-     	$.ajax({
-		    method: "POST",
-		    url:"/update/caspar_ip",
-		    data: { caspar_ip: caspar_ip},
-          	dataType: "json"
-		  });
+        console.log("calling promise done. ");
+        promise.done(function(){
 
-      // Get the new IP
-        display_caspar_ip()
+            // $('#status_button').text("IP updated!");
+            // console.log("IP updated!");
+            
+            // // Get the new IP
+            // display_caspar_ip()
+
+        });
+
+        console.log("calling display_caspar_ip");
+            // Get the new IP
+            display_caspar_ip()
+
       });
 
      function display_caspar_ip() {
@@ -445,4 +452,18 @@
 
               console.log("CG UPDATE done.");
 
-          };           
+          };     
+
+    function update_IP(caspar_ip) {
+
+              console.log("Update IP invoked.");
+
+              $('#status_button').text("Update IP invoked.");
+
+              return $.ajax({
+                method: "GET",
+                url: "/update/caspar_ip",
+                data: { caspar_ip: caspar_ip}
+              })
+
+        };             

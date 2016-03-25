@@ -19,17 +19,19 @@ class AdminCaspar < Router
 
 		casparIP_yml = YAML.load_file('db/casparIP.yml')
 
-		if casparIP_yml 
+		if casparIP_yml
 
 	    	casparIP_yml.to_json
 
-		else 
+		else
 			"Not set"
 		end
 
 	end
 
-	post "/update/caspar_ip" do
+	get "/update/caspar_ip" do
+
+		ENV['CASPARIP'] = params[:caspar_ip]
 		
 		# Create a hash with the parameters, and add an ID to each.
 	    caspar_ip_hash = { caspar_ip: params[:caspar_ip]}
