@@ -1,12 +1,14 @@
 ---
 :button_name:
-- Pelle
+- phone
 :template:
-- test2
+- phone
 :button_id:
 - btn2_6
+:layer:
+- '1'
 :f0:
-- Pelle
+- ''
 :f1:
 - ''
 :f2:

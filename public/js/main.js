@@ -97,6 +97,10 @@
                         $('#button_id').val(elem);
                         break;
 
+                      case "layer":
+                        $('#layer').val(elem);
+                        break; 
+
                       case "f0":
                         $('#f0').val(elem);
                         break;
@@ -197,6 +201,10 @@
                         $('#button_id').val(elem);
                         break;
 
+                      case "layer":
+                        $('#layer').val(elem);
+                        break;  
+
                       case "f0":
                         $('#f0').val(elem);
                         break;
@@ -278,6 +286,7 @@
 
           var button_name = $('#button_name').val();
           var template =  $('#template').val();
+          var layer =  $('#layer').val();
           $('#status_button').text("Updating button data 2/3");
           var f0 = $('#f0').val();
           var f1 = $('#f1').val();
@@ -292,7 +301,7 @@
           return $.ajax({
               method: "POST",
               url:"/update/button_data",
-              data: { button_name: button_name, template: template, button_id: button_id, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
+              data: { button_name: button_name, template: template, button_id: button_id, layer: layer, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
             });        
 
           };

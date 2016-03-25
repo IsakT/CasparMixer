@@ -60,9 +60,16 @@ class AdminCaspar < Router
 	end
 
 	post "/update/button_data" do
+
+		layer = [params[:layer]]
+
+		if layer == "null" || layer == "" || layer == " "
+			layer = 1
+		end
+
 		
 		# Create a hash with the parameters, and add an ID to each.
-	    button_data_hash = { button_name: [params[:button_name]], template: [params[:template]], button_id: [params[:button_id]], f0: [params[:f0]], f1: [params[:f1]], f2: [params[:f2]], f3: [params[:f3]], f4: [params[:f4]], f5: [params[:f5]], f6: [params[:f6]]}
+	    button_data_hash = { button_name: [params[:button_name]], template: [params[:template]], button_id: [params[:button_id]], layer: layer, f0: [params[:f0]], f1: [params[:f1]], f2: [params[:f2]], f3: [params[:f3]], f4: [params[:f4]], f5: [params[:f5]], f6: [params[:f6]]}
 
 	    File.open('db/graphic_buttons/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
 
@@ -71,7 +78,7 @@ class AdminCaspar < Router
 	post "/delete/button_data/?" do
 		
 		# Create a hash with the parameters, and add an ID to each.
-	    button_data_hash = { button_name: '', template: '', button_id: [params[:button_id]], f0: '', f1: '', f2: '', f3: '', f4: '', f5: '', f6: ''}
+	    button_data_hash = { button_name: '', template: '', button_id: [params[:button_id]], layer: '1', f0: '', f1: '', f2: '', f3: '', f4: '', f5: '', f6: ''}
 
 	    File.open('db/graphic_buttons/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
 
@@ -86,7 +93,12 @@ class AdminCaspar < Router
 		autoplay = params[:autoplay]
 
 		template = params[:template]
+		
 		layer = params[:layer]
+
+		if layer == " "
+			layer = 1
+		end
 
 		field0 = params[:f0]
 		field1 = params[:f1]
@@ -106,7 +118,7 @@ class AdminCaspar < Router
 		f6 = casparxml("f6","text",field6)
 
 		if template
-			cgconnect('CG 1 ADD 1 '+ template + " "+ autoplay +" " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
+			cgconnect('CG 1 ADD '+ layer +" "+ template + " "+ autoplay +" " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
 		end
 
 	end	
@@ -115,7 +127,7 @@ class AdminCaspar < Router
 
 		layer = params[:layer]
 
-		cgconnect('CG 1 PLAY 1')
+		cgconnect('CG 1 PLAY ' + layer)
 
 		# if layer == "" || layer == nil
 		#  	cgconnect('CG 1 PLAY ' + 1)
@@ -129,7 +141,7 @@ class AdminCaspar < Router
 
 		layer = params[:layer]
 
-		cgconnect('CG 1 STOP 1')
+		cgconnect('CG 1 STOP ' + layer)
 
 		# if layer == "" || layer == nil
 		#  	cgconnect('CG 1 STOP ' + 1)
@@ -143,7 +155,7 @@ class AdminCaspar < Router
 
 		layer = params[:layer]
 
-		cgconnect('CG 1 NEXT 1')
+		cgconnect('CG 1 NEXT ' + layer)
 
 		# if layer == "" || layer == nil
 		#  	cgconnect('CG 1 NEXT ' + 1)
@@ -157,7 +169,7 @@ class AdminCaspar < Router
 
 		layer = params[:layer]
 
-		cgconnect('CG 1 REMOVE 1')
+		cgconnect('CG 1 REMOVE ' + layer)
 
 		# if layer == "" || layer == nil
 		#  	cgconnect('CG 1 REMOVE ' + 1)
@@ -169,7 +181,7 @@ class AdminCaspar < Router
 
 	get '/Caspar/CG_CLEAR' do
 
-		cgconnect('CG 1 CLEAR 1')
+		cgconnect('CG 1 CLEAR')
 
 	end	
 
@@ -194,7 +206,7 @@ class AdminCaspar < Router
 		f5 = casparxml("f5","text",field5)
 		f6 = casparxml("f6","text",field6)
 
-		cgconnect('CG 1 UPDATE 1 ' + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
+		cgconnect('CG 1 UPDATE ' + layer + " " + beginxml + f0 + f1 + f2 + f3 + f4 + f5 + f6 + endxml)
 
 	end	
 
