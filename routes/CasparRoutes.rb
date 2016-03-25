@@ -66,7 +66,6 @@ class AdminCaspar < Router
 		if layer == "null" || layer == "" || layer == " "
 			layer = 1
 		end
-
 		
 		# Create a hash with the parameters, and add an ID to each.
 	    button_data_hash = { button_name: [params[:button_name]], template: [params[:template]], button_id: [params[:button_id]], layer: layer, f0: [params[:f0]], f1: [params[:f1]], f2: [params[:f2]], f3: [params[:f3]], f4: [params[:f4]], f5: [params[:f5]], f6: [params[:f6]]}

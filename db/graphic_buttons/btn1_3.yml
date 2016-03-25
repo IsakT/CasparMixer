@@ -1,13 +1,23 @@
 ---
-:button_name: ''
-:template: ''
+:button_name:
+- Fin team
+:template:
+- ''
 :button_id:
 - btn1_3
-:layer: '1'
-:f0: ''
-:f1: ''
-:f2: ''
-:f3: ''
-:f4: ''
-:f5: ''
-:f6: ''
+:layer:
+- '1'
+:f0:
+- ''
+:f1:
+- ''
+:f2:
+- ''
+:f3:
+- ''
+:f4:
+- ''
+:f5:
+- ''
+:f6:
+- ''
