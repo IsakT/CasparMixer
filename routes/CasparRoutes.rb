@@ -27,7 +27,7 @@ class AdminCaspar < Router
 	    	casparIP_yml.to_json
 
 		else
-			"Not set"
+			{:caspar_ip => "Not set"}.to_json
 		end
 
 	end
@@ -57,7 +57,7 @@ class AdminCaspar < Router
 	    	data_yml.to_json
 
 		else 
-			"No data"
+			"No data".to_json
 		end
 
 	end
@@ -65,10 +65,6 @@ class AdminCaspar < Router
 	post "/update/button_data" do
 
 		layer = [params[:layer]]
-
-		if layer == "null" || layer == "" || layer == " "
-			layer = 1
-		end
 
 		# Create a hash with the parameters, and add an ID to each.
 	    button_data_hash = { button_name: [params[:button_name]], template: [params[:template]], button_id: [params[:button_id]], layer: layer, f0: [params[:f0]], f1: [params[:f1]], f2: [params[:f2]], f3: [params[:f3]], f4: [params[:f4]], f5: [params[:f5]], f6: [params[:f6]]}
@@ -98,10 +94,6 @@ class AdminCaspar < Router
 		
 		layer = params[:layer]
 
-		if layer == " "
-			layer = 1
-		end
-
 		field0 = params[:f0]
 		field1 = params[:f1]
 		field2 = params[:f2]
@@ -109,7 +101,6 @@ class AdminCaspar < Router
 		field4 = params[:f4]
 		field5 = params[:f5]
 		field6 = params[:f6]
-
 
 		f0 = casparxml("f0","text",field0)
 		f1 = casparxml("f1","text",field1)
@@ -131,12 +122,6 @@ class AdminCaspar < Router
 
 		cgconnect('CG 1 PLAY ' + layer)
 
-		# if layer == "" || layer == nil
-		#  	cgconnect('CG 1 PLAY ' + 1)
-		# else
-		# 	cgconnect('CG 1 PLAY ' + layer)
-		# end
-
 	end	
 
 	get '/Caspar/CG_STOP' do
@@ -144,12 +129,6 @@ class AdminCaspar < Router
 		layer = params[:layer]
 
 		cgconnect('CG 1 STOP ' + layer)
-
-		# if layer == "" || layer == nil
-		#  	cgconnect('CG 1 STOP ' + 1)
-		# else
-		# 	cgconnect('CG 1 STOP ' + layer)
-		# end
 
 	end	
 
@@ -159,12 +138,6 @@ class AdminCaspar < Router
 
 		cgconnect('CG 1 NEXT ' + layer)
 
-		# if layer == "" || layer == nil
-		#  	cgconnect('CG 1 NEXT ' + 1)
-		# else
-		# 	cgconnect('CG 1 NEXT ' + layer)
-		# end
-
 	end	
 
 	get '/Caspar/CG_REMOVE' do
@@ -172,12 +145,6 @@ class AdminCaspar < Router
 		layer = params[:layer]
 
 		cgconnect('CG 1 REMOVE ' + layer)
-
-		# if layer == "" || layer == nil
-		#  	cgconnect('CG 1 REMOVE ' + 1)
-		# else
-		# 	cgconnect('CG 1 REMOVE ' + layer)
-		# end
 
 	end	
 
@@ -198,7 +165,6 @@ class AdminCaspar < Router
 		field4 = params[:f4]
 		field5 = params[:f5]
 		field6 = params[:f6]
-
 
 		f0 = casparxml("f0","text",field0)
 		f1 = casparxml("f1","text",field1)

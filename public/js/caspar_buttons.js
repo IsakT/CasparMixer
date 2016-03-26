@@ -1,22 +1,6 @@
 $('.caspar_add').click(function() {
 
-	// Get the data from the forms
-    var template =  $('#template').val();
-    var layer =  $('#layer').val();
-    var f0 = $('#f0').val();
-    var f1 = $('#f1').val();
-    var f2 = $('#f2').val();
-    var f3 = $('#f3').val();
-    var f4 = $('#f4').val();
-    var f5 = $('#f5').val();
-    var f6 = $('#f6').val();
-    console.log("Data from F6 taken.");
-
-    $(':button').prop('disabled', false);
-
-    // CG ADD Command
-    console.log("Calling CG_ADD...");
-    CG_ADD(layer, template, f0, f1, f2, f3, f4, f5, f6);  
+    CG_ADD();  
 
 });
 
@@ -71,8 +55,8 @@ $('.caspar_update').click(function() {
               var f6 = $('#f6').val();
               console.log("Data from F6 taken.");
 
-              // CG ADD Command
-              console.log("Calling CG_ADD...");
+              // CG UPDATE Command
+              console.log("Calling CG_UPDATE...");
               CG_UPDATE(layer, f0, f1, f2, f3, f4, f5, f6);   
 
               
