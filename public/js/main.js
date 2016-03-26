@@ -69,20 +69,22 @@
            	// add button ID to the forms
            	$('#button_id').val(button_id); 
 
-            // Assign a deferred object
+            // Assigning the empty 'dfd' variable to be a deferred object
             dfd = $.Deferred();
 
+            // dfd gets resolved (hopefully) in this function and returns.
             display_button_data(button_id)
 
-            dfd
-               .done(function(message) {
-                  console.log("JQUERY DEFERRED CALLBACK: " + message);
+            // when dfd is resolved, do this:
+            dfd.done(function(message) {
+                
+                console.log("JQUERY DEFERRED CALLBACK: " + message);
 
-                  if($('.autoplay').hasClass("autoplay-enabled"))
-                    {
-                        CG_ADD(1);  // CG ADD with autoplay.
-                    }
-                });
+                if($('.autoplay').hasClass("autoplay-enabled"))
+                {
+                   CG_ADD(1);  // CG ADD with autoplay.
+                }
+            });
 
             
 

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	// Assigning an empty variable for using JQuery Deferred.
 	var dfd;
 
     // On page load, get the caspar IP and display it.
