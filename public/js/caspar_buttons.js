@@ -1,6 +1,6 @@
 $('.caspar_add').click(function() {
 
-    CG_ADD();  
+    CG_ADD(0);  // ADD without autoplay
 
 });
 

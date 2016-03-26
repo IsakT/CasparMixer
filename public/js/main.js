@@ -69,7 +69,22 @@
            	// add button ID to the forms
            	$('#button_id').val(button_id); 
 
+            // Assign a deferred object
+            dfd = $.Deferred();
+
             display_button_data(button_id)
+
+            dfd
+               .done(function(message) {
+                  console.log("JQUERY DEFERRED CALLBACK: " + message);
+
+                  if($('.autoplay').hasClass("autoplay-enabled"))
+                    {
+                        CG_ADD(1);  // CG ADD with autoplay.
+                    }
+                });
+
+            
 
     	 });
 
@@ -81,7 +96,7 @@
     		 	var button_data = update_button_data(button_id);
 
           button_data.done(function() { 
-            
+
             $('#status_button').text("Update done");
             console.log("Update done");
             display_button_name(button_id) 
@@ -153,12 +168,13 @@
                       case "f6":
                         $('#f6').val(elem);
                         $('#status_button').text("Loaded!");
-
+                        dfd.resolve("I was resolved");
                         break;
                     } // Case Switch
                 });  // Each loop          
             }); // Promise   
 
+            
             $(':button').prop('disabled', false);
 
          };
@@ -264,7 +280,7 @@
      // *******************************************
 
 
-    function CG_ADD() {
+    function CG_ADD(autoplay) {
 
               $('#status_button').text("CG ADD...");
 
@@ -279,12 +295,6 @@
               var f5 = $('#f5').val();
               var f6 = $('#f6').val();
               console.log("CG_ADD started.");             
-
-              var autoplay = 0;
-
-              if($('.autoplay').hasClass("autoplay-enabled")){
-                  autoplay = 1;
-              }
 
               $.ajax({
                 method: "GET",

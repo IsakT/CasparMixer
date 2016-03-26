@@ -1,13 +1,23 @@
 ---
-:button_name: ''
-:template: ''
+:button_name:
+- Pelle
+:template:
+- lower3
 :button_id:
 - btn2_2
-:layer: '1'
-:f0: ''
-:f1: ''
-:f2: ''
-:f3: ''
-:f4: ''
-:f5: ''
-:f6: ''
+:layer:
+- '1'
+:f0:
+- Pelle
+:f1:
+- Pelle
+:f2:
+- Pelle
+:f3:
+- Pelle
+:f4:
+- Pelle
+:f5:
+- Pelle
+:f6:
+- Pelle

@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	var dfd;
+
     // On page load, get the caspar IP and display it.
      display_caspar_ip()
 
