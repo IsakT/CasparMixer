@@ -1,23 +1,13 @@
 ---
-:button_name:
-- Rikard
-:template:
-- lower3
+:button_name: ''
+:template: ''
 :button_id:
 - btn2_1
-:layer:
-- '1'
-:f0:
-- Rikard
-:f1:
-- Rikard
-:f2:
-- Rikard
-:f3:
-- Rikard
-:f4:
-- Rikard
-:f5:
-- Rikard
-:f6:
-- Rikard
+:layer: '1'
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''

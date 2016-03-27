@@ -11,7 +11,6 @@
         
         var promise = update_IP(caspar_ip);
 
-        console.log("calling promise done. ");
         promise.done(function(){
 
             // $('#status_button').text("IP updated!");
@@ -44,6 +43,7 @@
               $.each(json, function(n, elem) {
 
                   $('#casparip_label').text("Caspar IP " + elem);
+                  console.log("Added IP to the label");
 
               }
           );

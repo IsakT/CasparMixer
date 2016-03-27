@@ -10,7 +10,9 @@ class AdminCaspar < Router
 		erb :'Graphics' , layout: :'layout/index'
 	end
 
-	post "/graphic" do
+	get "/mixer" do
+
+		erb :'Mixer' , layout: :'layout/Mixer-layout'
 
 	end
 

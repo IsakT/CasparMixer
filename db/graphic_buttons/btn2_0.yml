@@ -1,23 +1,13 @@
 ---
-:button_name:
-- Isak
-:template:
-- lower3
+:button_name: ''
+:template: ''
 :button_id:
 - btn2_0
-:layer:
-- '1'
-:f0:
-- Isak
-:f1:
-- Isak
-:f2:
-- Isak
-:f3:
-- Isak
-:f4:
-- Isak
-:f5:
-- Isak
-:f6:
-- Isak
+:layer: '1'
+:f0: ''
+:f1: ''
+:f2: ''
+:f3: ''
+:f4: ''
+:f5: ''
+:f6: ''
