@@ -88,16 +88,17 @@ class AdminCaspar < Router
 	# | 	     CASPAR	    	  |
 	# *****************************
 
-	get '/Caspar/LOADBG' do
+	get '/Caspar/Command' do
 
+		command = params[:command]
 		channel = params[:channel]
 		layer = params[:layer]
 		file = params[:file]
 		effect = params[:effect]
 		duration = params[:duration]
 
-		cgconnect("LOADBG #{channel}-#{layer} #{file} #{effect} #{duration}")
-		
+		cgconnect("#{command} #{channel}-#{layer} #{file} #{effect} #{duration}")
+
 	end
 
 
