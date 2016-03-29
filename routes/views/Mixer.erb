@@ -2,122 +2,109 @@
 
 <!-- Upper half -->
 
+<!-- Image adjustment -->
 <div class="container col-sm-6 panel panel-default">
 		<div class="row">
 			<div class="col-sm-10">
-
-				<h2>Image adjustments</h2>
-			
+				<h2>Image adjustments</h2>		
 				<div class="col-sm-12 col-sm-offset-2">
-					<button type="button" class="btn_1" id="btn1_0">Brightness</button>
-					<button type="button" class="btn_1" id="btn1_1">Opacity</button>
-					<button type="button" class="btn_1" id="btn1_2">Contrast</button>
-					<button type="button" class="btn_1" id="btn1_3">Saturation</button>
+					<button type="button" class="image-adjustments" id="Brightness">Brightness</button>
+					<button type="button" class="image-adjustments" id="Opacity">Opacity</button>
+					<button type="button" class="image-adjustments" id="Contrast">Contrast</button>
+					<button type="button" class="image-adjustments" id="Saturation">Saturation</button>
 				</div>
 				<div class="col-sm-12 col-sm-offset-2">
-					<button type="button" class="btn_1" id="btn1_4">Opacity</button>
-					<button type="button" class="btn_1" id="btn1_5">Opacity</button>
-					<button type="button" class="btn_1" id="btn1_4">Opacity</button>
-					<button type="button" class="btn_1" id="btn1_5">Opacity</button>
+					<button type="button" class="image-adjustments" id="">1</button>
+					<button type="button" class="image-adjustments" id="">2</button>
+					<button type="button" class="image-adjustments" id="">3</button>
+					<button type="button" class="image-adjustments" id="">4</button>
 				</div>
 				<div class="col-sm-12 col-sm-offset-2">
-					<button type="button" class="btn_2" id="btn1_4">MIXER CLEAR</button>				
+					<button type="button" class="btn_2" id="Mixer-clear">MIXER CLEAR</button>				
 				</div>
 			</div>
 
+			<!-- Slider image-adjustment -->
 			<div class="col-sm-2">
-
-					<!-- ********** -->
-
 					<p>
 					  <label for="amount">Amount:</label>
 					  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-					</p>
-					 
+					</p> 
 					<div id="slider-vertical" style="height:300px;"></div>
-
-					<!-- ********** -->
 			</div>
+
 		</div>
 </div>
-<div class="container col-sm-4 panel panel-default">
 
+<!-- Chroma -->
+<div class="container col-sm-4 panel panel-default">
 		<div class="col-sm-12">
 			<h2>Chroma Key</h2>
 			<br/>
-			<button type="button" class="btn_1" id="btn1_4"></button>				
+			<button type="button" class="chroma" id="btn1_4"></button>				
 		</div>
 		<div class="col-sm-12">
 			<h2>Media</h2>
 			<br/>
-			<button type="button" class="btn_1" id="btn1_4">1</button>	
-			<button type="button" class="btn_1" id="btn1_4">2</button>
-			<button type="button" class="btn_1" id="btn1_4">3</button>			
+			<button type="button" class="chroma-media" id="1">1</button>	
+			<button type="button" class="chroma-media" id="2">2</button>
+			<button type="button" class="chroma-media" id="3">3</button>			
 		</div>
-
 </div>
-
-
 
 <!-- Bottom half -->
 
+<!-- Mixer buttons -->
 	<div class="container col-sm-7 panel panel-default">
 		<div class="row">
 			<div class="btn-group col-sm-12">
-
 				<h2>P/P</h2>
-
-				<button type="button" class="btn_1" id="btn1_0">1</button>
-				<button type="button" class="btn_1" id="btn1_1">2</button>
-				<button type="button" class="btn_1" id="btn1_2">3</button>
-				<button type="button" class="btn_1" id="btn1_3">4</button>
-				<button type="button" class="btn_1" id="btn1_4">5</button>
-				<button type="button" class="btn_1" id="btn1_5">6</button>
-				<button type="button" class="btn_1" id="btn1_5">Screen</button>
-
+				<button type="button" class="program-btn" id="btn1_0">1</button>
+				<button type="button" class="program-btn" id="btn1_1">2</button>
+				<button type="button" class="program-btn" id="btn1_2">3</button>
+				<button type="button" class="program-btn" id="btn1_3">4</button>
+				<button type="button" class="program-btn" id="btn1_4">5</button>
+				<button type="button" class="program-btn" id="btn1_5">6</button>
+				<button type="button" class="program-btn" id="btn1_5">Screen</button>
 			</div>
-
 			<h4 class="text-center">Program</h4>
 
 			<div class="btn-group col-sm-12">
-				<button type="button" class="btn_1" id="btn1_0">1</button>
-				<button type="button" class="btn_1" id="btn1_1">2</button>
-				<button type="button" class="btn_1" id="btn1_2">3</button>
-				<button type="button" class="btn_1" id="btn1_3">4</button>
-				<button type="button" class="btn_1" id="btn1_4">5</button>
-				<button type="button" class="btn_1" id="btn1_5">6</button>
-				<button type="button" class="btn_1" id="btn1_5">Screen</button>
+				<button type="button" class="preset-btn" id="btn2_0">1</button>
+				<button type="button" class="preset-btn" id="btn2_1">2</button>
+				<button type="button" class="preset-btn" id="btn2_2">3</button>
+				<button type="button" class="preset-btn" id="btn2_3">4</button>
+				<button type="button" class="preset-btn" id="btn2_4">5</button>
+				<button type="button" class="preset-btn" id="btn2_5">6</button>
+				<button type="button" class="preset-btn" id="btn2_5">Screen</button>
 			</div>
-
 			<h4 class="text-center">Preset</h4>
-
 		</div>
 	</div>
 
 	<div class="container col-sm-5 panel panel-default">
 		<div class="row">
+
+			<!-- Slider transition -->
 			<div class="col-sm-4 col-sm-offset-2">
 				<p>
 				 <label for="amount2">Duration (frames):</label>
 				 <input type="text" id="amount2" readonly style="border:0; color:#f6931f; font-weight:bold;">
-				</p>
-					 
+				</p>			 
 				<div id="slider-vertical2" style="height:300px;"></div>
 			</div>
-			<div class="col-sm-6">
 
+			<div class="col-sm-6">
 				<h4>Transition Effects</h4>
-				<button type="button" class="btn_1" id="btn1_5">Mix</button>
-				<button type="button" class="btn_1" id="btn1_5">Wipe</button>
-				<button type="button" class="btn_1" id="btn1_5">Push</button>
-				<button type="button" class="btn_1" id="btn1_5">Slide</button>
+				<button type="button" class="trans-fx" id="Mix_btn">Mix</button>
+				<button type="button" class="trans-fx" id="Wipe_btn">Wipe</button>
+				<button type="button" class="trans-fx" id="Push_btn">Push</button>
+				<button type="button" class="trans-fx" id="Slide_btn">Slide</button>
 
 				<h4>Transition</h4>
-				<button type="button" class="btn_1" id="btn1_5">AUTO</button>
-				<button type="button" class="btn_1" id="btn1_5">TAKE</button>
+				<button type="button" class="trans" id="Auto_trans_btn">AUTO</button>
+				<button type="button" class="trans" id="Take_trans_btn">TAKE</button>
 			</div>
 		</div>
 	</div>
-
-
 </div>
