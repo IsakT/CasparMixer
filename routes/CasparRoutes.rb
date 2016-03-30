@@ -92,12 +92,14 @@ class AdminCaspar < Router
 
 		command = params[:command]
 		channel = params[:channel]
-		layer = params[:layer]
-		file = params[:file]
+		layer = params[:layer] || ""
+		file = params[:file] || ""
 		effect = params[:effect] || ""
 		duration = params[:duration] || ""
+		animation = params[:animation] || ""
+		parameters = params[:parameters] || ""
 
-		cgconnect("#{command} #{channel}-#{layer} #{file} #{effect} #{duration}")
+		cgconnect("#{command} #{channel}-#{layer} #{file} #{effect} #{duration} #{animation} #{parameters}")
 
 	end
 

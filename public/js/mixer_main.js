@@ -41,14 +41,15 @@ $(document).ready(function() {
   $(".program-btn").click(function(){
 
     var file =  $('#file').val();
-    PLAY(file, 1, 1);
+
+    Caspar_cmd("play", 1, 1, file);
 
   })
 
   $(".preset-btn").click(function(){
 
     var file =  $('#file').val();
-    PLAY(file, 2, 1);
+    Caspar_cmd(2, 1, file);
   	
   })
 
@@ -104,12 +105,12 @@ $(".trans").click(function(){
 
 // *******************************************
 
-function PLAY(file, channel, layer) {
-
+function Caspar_cmd(command, channel, layer, file, effect, duration, animation, parameters) // Optional parameters
+{ 
     return $.ajax({
       method: "GET",
       url: "/Caspar/Command",
-      data: { command: "play", channel: channel, layer: layer, file: file}
+      data: { command: "play", channel: channel, layer: layer, file: file, effect: effect, duration: duration, animation: animation, parameters: parameters}
     })
 
 };
