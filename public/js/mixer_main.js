@@ -1,5 +1,9 @@
 $(document).ready(function() {
+ // *******************************************
+ 
+ //              SLIDERS 
 
+ // *******************************************
   $(function() {
     $( "#slider-vertical" ).slider({
       orientation: "vertical",
@@ -28,17 +32,23 @@ $(document).ready(function() {
     $( "#amount2" ).val( $( "#slider-vertical2" ).slider( "value" ) );
   });
 
+// *******************************************
+
+//              CLICK EVENTS
+
+// *******************************************
+
   $(".program-btn").click(function(){
 
-
+    var file =  $('#file').val();
+    PLAY(file, 1, 1);
 
   })
 
   $(".preset-btn").click(function(){
 
-
-
-
+    var file =  $('#file').val();
+    PLAY(file, 2, 1);
   	
   })
 
@@ -87,5 +97,24 @@ $(".trans").click(function(){
 
   	
   })
+
+// *******************************************
+
+//              FUNCTIONS
+
+// *******************************************
+
+function PLAY(file, channel, layer) {
+
+    return $.ajax({
+      method: "GET",
+      url: "/Caspar/Command",
+      data: { command: "play", channel: channel, layer: layer, file: file}
+    })
+
+};
+
+
+
 
 });
