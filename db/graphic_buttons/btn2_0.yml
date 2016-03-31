@@ -1,9 +1,10 @@
 ---
-:button_name: fdsa
-:template: lower3
-:button_id: btn2_0
+:button_name: ''
+:template: ''
+:button_id:
+- btn2_0
 :layer: '1'
-:f0: Isak Törnros
+:f0: ''
 :f1: ''
 :f2: ''
 :f3: ''
