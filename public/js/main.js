@@ -240,7 +240,7 @@
           return $.ajax({
               method: "POST",
               url:"/update/button_data",
-              data: { button_name: button_name, template: template, button_id: button_id, layer: layer, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
+              data: { db: "graphic_buttons", button_name: button_name, template: template, button_id: button_id, layer: layer, f0: f0, f1: f1, f2:f2, f3: f3, f4: f4, f5: f5, f6:f6 }
             });        
 
           };
@@ -255,7 +255,7 @@
               return $.ajax({
                 method: "GET",
                 url: "/get/button_data",
-                data: { button_id: button_id }
+                data: { button_id: button_id, db: "graphic_buttons" }
               });          
 
           };
@@ -269,7 +269,7 @@
               return $.ajax({
                 method: "POST",
                 url: "/delete/button_data/?",
-                data: { button_id: button_id }
+                data: { button_id: button_id, db: "graphic_buttons" }
               })
 
               console.log("Clear button data done.");

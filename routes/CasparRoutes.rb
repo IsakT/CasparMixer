@@ -52,7 +52,7 @@ class AdminCaspar < Router
 
 	get "/get/button_data" do
 
-		data_yml = YAML.load_file('db/graphic_buttons/'+params[:button_id]+'.yml')
+		data_yml = YAML.load_file('db/'+params[:db]+'/'+params[:button_id]+'.yml')
 
 		if data_yml 
 
@@ -66,12 +66,16 @@ class AdminCaspar < Router
 
 	post "/update/button_data" do
 
-		layer = [params[:layer]]
+		layer = params[:layer]
 
-		# Create a hash with the parameters, and add an ID to each.
-	    button_data_hash = { button_name: [params[:button_name]], template: [params[:template]], button_id: [params[:button_id]], layer: layer, f0: [params[:f0]], f1: [params[:f1]], f2: [params[:f2]], f3: [params[:f3]], f4: [params[:f4]], f5: [params[:f5]], f6: [params[:f6]]}
+		if params[:db] == "graphic_buttons"
+	    	button_data_hash = { button_name: params[:button_name], template: params[:template], button_id: params[:button_id], layer: layer, f0: params[:f0], f1: params[:f1], f2: params[:f2], f3: params[:f3], f4: params[:f4], f5: params[:f5], f6: params[:f6]}
+	    
+	    elsif params[:db] == "mixer_buttons"
+	    	button_data_hash = { button_name: params[:button_name], resource: params[:resource], button_id: params[:button_id]}
+		end
 
-	    File.open('db/graphic_buttons/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
+	    File.open('db/'+params[:db]+'/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
 
 	end 
 
@@ -80,7 +84,7 @@ class AdminCaspar < Router
 		# Create a hash with the parameters, and add an ID to each.
 	    button_data_hash = { button_name: '', template: '', button_id: [params[:button_id]], layer: '1', f0: '', f1: '', f2: '', f3: '', f4: '', f5: '', f6: ''}
 
-	    File.open('db/graphic_buttons/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
+	    File.open('db/'+params[:db]+'/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
 
 	end 
 
