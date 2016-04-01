@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+<button class="btn btn-danger pull-right" id="clear_all_button_data">!Clear all button data!</button>
 	<!-- Upper half -->
 
 	<!-- Image adjustment -->
@@ -110,31 +110,59 @@
 	<div class="container col-lg-6 panel panel-default">
 
 		<form method="post" class="" role="form">
-			<h3> P/P data: <span id="status_button">status</span></h3> 
+			<h3> Program data: <span id="status_button">status</span></h3> 
 
 			<label class="radio-inline"><input type="radio" name="optradio">DECKLINK</label>
 			<label class="radio-inline"><input type="radio" name="optradio">BLUEFISH</label>
 			<label class="radio-inline"><input type="radio" name="optradio">STREAM</label>
 
 			<div class="form-group">
-				    <label for="button_name">Button name: </label>
-				    <input type="text" class="form-control" id="button_name" >
+				    <label for="button_name1">Button name: </label>
+				    <input type="text" class="form-control" id="button_name1" >
 			</div>		
 			<div class="form-group">
-				    <label for="command">Caspar command: </label>
-				    <input type="text" class="form-control" id="command" value="PLAY">
+				    <label for="command1">Caspar command: </label>
+				    <input type="text" class="form-control" id="command1" value="PLAY">
 			</div>	
 			<div class="form-group">
-				    <label for="file_resource">File/resource: </label>
-				    <input type="text" class="form-control" id="file_resource">
+				    <label for="file_resource1">File/resource: </label>
+				    <input type="text" class="form-control" id="file_resource1">
 			</div>	
 			<div class="form-group">
-			     	 <label for="button_id"><!-- Button ID: --></label>
-			   		 <input type="hidden" class="form-control" id="button_id">
+			     	 <label for="button_id1"><!-- Button ID: --></label>
+			   		 <input type="hidden" class="form-control" id="button_id1">
 		  	</div>
-
-
-				
 		</form>
-</div>
+		<button id="update_button" class="btn btn-info btn-lg">SAVE</button>
+		<button id="clear_data1" class="btn btn-danger btn-lg pull-right">Clear data</button>
+	</div>
+	<div class="container col-lg-6 panel panel-default">
+
+		<form method="post" class="" role="form">
+			<h3> Preset data: <span id="status_button">status</span></h3> 
+
+			<label class="radio-inline"><input type="radio" name="optradio">DECKLINK</label>
+			<label class="radio-inline"><input type="radio" name="optradio">BLUEFISH</label>
+			<label class="radio-inline"><input type="radio" name="optradio">STREAM</label>
+
+			<div class="form-group">
+				    <label for="button_name2">Button name: </label>
+				    <input type="text" class="form-control" id="button_name2" >
+			</div>		
+			<div class="form-group">
+				    <label for="command2">Caspar command: </label>
+				    <input type="text" class="form-control" id="command2" value="PLAY">
+			</div>	
+			<div class="form-group">
+				    <label for="file_resource2">File/resource: </label>
+				    <input type="text" class="form-control" id="file_resource2">
+			</div>	
+			<div class="form-group">
+			     	 <label for="button_id2"><!-- Button ID: --></label>
+			   		 <input type="hidden" class="form-control" id="button_id2">
+		  	</div>
+		</form>
+		<button id="update_button2" class="btn btn-info btn-lg">SAVE</button>
+		<button id="clear_data2" class="btn btn-danger btn-lg pull-right">Clear data</button>
+	</div>
 </div>

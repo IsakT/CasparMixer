@@ -59,7 +59,7 @@ class AdminCaspar < Router
 	    	data_yml.to_json
 
 		else 
-			"No data".to_json
+			"No button data.".to_json
 		end
 
 	end
