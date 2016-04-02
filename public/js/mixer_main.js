@@ -102,9 +102,11 @@ $('#update_button').click(function() {
 
   var button_data = update_button_data(button_name, resource, button_id);
 
-  button_data.done(function() { 
-    console.log("Update done");
-    display_button_name(button_id) 
+  button_data.done(function(msg) { 
+    console.log("Update done: " + msg);
+    display_button_data(button_id, "1");
+    display_button_data(button_id, "2");
+    // display_button_name(button_id) 
   });
 
 });
@@ -119,9 +121,11 @@ $('#update_button2').click(function() {
 
   var button_data = update_button_data(button_name, resource, button_id);
 
-  button_data.done(function() { 
-    console.log("Update done");
-    display_button_name(button_id) 
+  button_data.done(function(msg) { 
+    console.log("Update done: " + msg);
+    display_button_data(button_id, "2");
+    display_button_data(button_id, "1");
+    // display_button_name(button_id) 
   });
 
 });
@@ -175,26 +179,67 @@ $('#clear_all_button_data').click(function() {
 
 });
 
+$(".trans-fx").click(function(){
+
+  // Selected button
+  $('.trans-fx').removeClass("selected-button2");       
+  $(this).addClass( "selected-button2" );
+  	
+  })
+
+$("#Auto_trans_btn").click(function(){
+
+  var preset_file = $('#file_resource2').val();
+  var program_file = $('#file_resource1').val();
+  var effect = $('.trans-fx.selected-button2').val();
+  var duration = $('#amount2').val();
+
+  // Caspar_cmd("loadbg", 1, 1, preset_file, effect, duration, "easeinsine", "auto")
+  // Caspar_cmd("load", 2, 1, program_file)
+
+  // Current selected mixer buttons
+  var program = $(".program-btn.selected-button");
+  var preset = $(".preset-btn.selected-button");
+
+  // Get button id
+  var program_id = program.attr('id');
+  var preset_id = preset.attr('id');
+
+  // Remove selected-button class
+  program.removeClass("selected-button");
+  preset.removeClass("selected-button");
+
+  // Add selected button class to the newly selected buttons
+  $('#'+program_id+'.preset-btn').addClass('selected-button');
+  $('#'+preset_id+'.program-btn').addClass('selected-button');
+    
+  // Update data forms as the buttons switch.
+  display_button_data(preset_id, "1" );
+  display_button_data(program_id, "2" );
+
+  })
+
 $(".image-adjustments").click(function(){
 
 
 
 
-  	
+    
   })
+
 $("#Mixer-clear").click(function(){
 
 
 
 
-  	
+    
   })
 $(".chroma").click(function(){
 
 
 
 
-  	
+    
   })
 
 $(".chroma-media").click(function(){
@@ -202,16 +247,9 @@ $(".chroma-media").click(function(){
 
 
 
-  	
+    
   })
 
-$(".trans-fx").click(function(){
-
-
-
-
-  	
-  })
 
 $(".trans").click(function(){
 
@@ -281,7 +319,7 @@ function Caspar_cmd(command, channel, layer, file, effect, duration, animation, 
     return $.ajax({
       method: "GET",
       url: "/Caspar/Command",
-      data: { command: "play", channel: channel, layer: layer, file: file, effect: effect, duration: duration, animation: animation, parameters: parameters}
+      data: { command: command, channel: channel, layer: layer, file: file, effect: effect, duration: duration, animation: animation, parameters: parameters}
     })
 
 };

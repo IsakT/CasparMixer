@@ -170,12 +170,12 @@
 ************************/
 
 .trans {
-  background: #9b59b6;
-  background-image: -webkit-linear-gradient(top, #9b59b6, #8e44ad);
-  background-image: -moz-linear-gradient(top, #9b59b6, #8e44ad);
-  background-image: -ms-linear-gradient(top, #9b59b6, #8e44ad);
-  background-image: -o-linear-gradient(top, #9b59b6, #8e44ad);
-  background-image: linear-gradient(to bottom, #9b59b6, #8e44ad);
+  background: green;
+/*  background-image: -webkit-linear-gradient(top, green, #8e44ad);
+  background-image: -moz-linear-gradient(top, green, #8e44ad);
+  background-image: -ms-linear-gradient(top, green, #8e44ad);
+  background-image: -o-linear-gradient(top, green, #8e44ad);
+  background-image: linear-gradient(to bottom, green, #8e44ad);*/
 
   box-shadow: 0px 0px 12px -3px black;
 
@@ -197,13 +197,13 @@
 
 }
 .trans:hover {
-  background: #824b99;
-  background-image: -webkit-linear-gradient(top, #824b99, #73388c);
-  background-image: -moz-linear-gradient(top, #824b99, #73388c);
-  background-image: -ms-linear-gradient(top, #824b99, #73388c);
-  background-image: -o-linear-gradient(top, #824b99, #73388c);
-  background-image: linear-gradient(to bottom, #824b99, #73388c);
-  text-decoration: none;
+  background: red;
+/*  background-image: -webkit-linear-gradient(top, red, #73388c);
+  background-image: -moz-linear-gradient(top, red, #73388c);
+  background-image: -ms-linear-gradient(top, red, #73388c);
+  background-image: -o-linear-gradient(top, red, #73388c);
+  background-image: linear-gradient(to bottom, red, #73388c);
+  text-decoration: none;*/
 }
 .trans:active {
   background-color:black;
@@ -539,5 +539,33 @@
 
 .selected-button{
     border:4px solid black;
+    background: red;
+    background-image: -webkit-linear-gradient(top, red, red);
+    background-image: -moz-linear-gradient(top, red, red);
+    background-image: -ms-linear-gradient(top, red, red);
+    background-image: -o-linear-gradient(top, red, red);
+    background-image: linear-gradient(to bottom, red, red);
+}
+.selected-button:hover{
+    background: red;
+    background-image: -webkit-linear-gradient(top, red, red);
+    background-image: -moz-linear-gradient(top, red, red);
+    background-image: -ms-linear-gradient(top, red, red);
+    background-image: -o-linear-gradient(top, red, red);
+    background-image: linear-gradient(to bottom, red, red);
 }
 
+.selected-button2{
+    border:4px solid black;
+    background-color:blue;
+}
+
+.selected-button3{
+    border:4px solid black;
+    background: red;
+    background-image: -webkit-linear-gradient(top, red, red);
+    background-image: -moz-linear-gradient(top, red, red);
+    background-image: -ms-linear-gradient(top, red, red);
+    background-image: -o-linear-gradient(top, red, red);
+    background-image: linear-gradient(to bottom, red, red);
+}

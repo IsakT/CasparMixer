@@ -78,6 +78,8 @@ class AdminCaspar < Router
 
 	    File.open('db/'+params[:db]+'/'+params[:button_id]+'.yml', "w") {|f| f.write(button_data_hash.to_yaml)}
 
+	    return "Message from update route".to_json
+
 	end 
 
 	post "/delete/button_data/?" do
