@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
+  // For JQuery deferred objects.
   var dfd;
 
-  button_array = ["btn1_0", "btn1_1", "btn1_2", "btn1_3", "btn1_4", "btn1_5", "btn1_6", "btn2_0", "btn2_1", "btn2_2", "btn2_3", "btn2_4", "btn2_5", "btn2_6"]
+  // For clear-all function.
+  button_array = ["btn1_0", "btn1_1", "btn1_2", "btn1_3", "btn1_4", "btn1_5", "btn1_6"]
 
 
  // *******************************************
@@ -46,24 +48,24 @@ $(document).ready(function() {
 
 $(".program-btn").click(function(){
 
-  // Selected button
+  // Selected button.
   $('.program-btn').removeClass("selected-button");       
   $(this).addClass( "selected-button" );
 
-  // Get id
+  // Get id.
   var button_id = $(this).attr('id');
 
-  // Add button ID to the forms
+  // Add button ID to the forms.
   $('#button_id1').val(button_id); 
 
   // Display data; send command when finished.
   dfd = $.Deferred();
   display_button_data(button_id, "1");
   dfd.done(function(message) {
-    // Send command
+    // Send command.
     console.log("JQUERY DEFERRED CALLBACK: " + message)
     var file =  $('#file_resource1').val();
-    // Caspar_cmd("play", 1, 1, file);
+    Caspar_cmd("play", 1, 1, file);
   });
   
 
@@ -71,14 +73,14 @@ $(".program-btn").click(function(){
 
 $(".preset-btn").click(function(){
 
-  // Selected button
+  // Selected button.
   $('.preset-btn').removeClass("selected-button");       
   $(this).addClass( "selected-button" );
 
-  // Get id
+  // Get id.
   var button_id = $(this).attr('id');
 
-  // Add button ID to the forms
+  // Add button ID to the forms.
   $('#button_id2').val(button_id); 
 
   // Display data; send command when finished.
@@ -87,7 +89,7 @@ $(".preset-btn").click(function(){
   dfd.done(function(message) {
     // Send command
     var file =  $('#file_resource2').val();
-    // Caspar_cmd("play", 2, 1, file);
+    Caspar_cmd("play", 2, 1, file);
   });
 	
 })
@@ -167,7 +169,7 @@ $('#clear_all_button_data').click(function() {
 
   $('#status_button').text("Please wait!");
 
-  // button_array is declared at the start
+  // button_array is declared at the start.
   $.each( button_array, function( i, l ){
     clear_button_data(l);
   });
@@ -181,35 +183,41 @@ $('#clear_all_button_data').click(function() {
 
 $(".trans-fx").click(function(){
 
-  // Selected button
+  // Selected button.
   $('.trans-fx').removeClass("selected-button2");       
   $(this).addClass( "selected-button2" );
   	
   })
 
-$("#Auto_trans_btn").click(function(){
+$(".trans").click(function(){
 
   var preset_file = $('#file_resource2').val();
   var program_file = $('#file_resource1').val();
   var effect = $('.trans-fx.selected-button2').val();
   var duration = $('#amount2').val();
+  var command = "play", auto = "";
 
-  // Caspar_cmd("loadbg", 1, 1, preset_file, effect, duration, "easeinsine", "auto")
-  // Caspar_cmd("load", 2, 1, program_file)
+  // If auto transition was clicked.
+  if($(this).attr('id') == "Auto_trans_btn"){
+    var command = "loadbg", auto = "auto";
+  }
 
-  // Current selected mixer buttons
+  Caspar_cmd(command, 1, 1, preset_file, effect, duration, "easeinsine", auto)
+  Caspar_cmd("load", 2, 1, program_file)
+
+  // Current selected mixer buttons.
   var program = $(".program-btn.selected-button");
   var preset = $(".preset-btn.selected-button");
 
-  // Get button id
+  // Get button id.
   var program_id = program.attr('id');
   var preset_id = preset.attr('id');
 
-  // Remove selected-button class
+  // Remove selected-button class.
   program.removeClass("selected-button");
   preset.removeClass("selected-button");
 
-  // Add selected button class to the newly selected buttons
+  // Add selected button class to the newly selected buttons.
   $('#'+program_id+'.preset-btn').addClass('selected-button');
   $('#'+preset_id+'.program-btn').addClass('selected-button');
     
