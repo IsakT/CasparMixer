@@ -17,10 +17,16 @@ $(document).ready(function() {
       orientation: "vertical",
       range: "min",
       min: 0,
-      max: 100,
-      value: 60,
+      max: 200,
+      value: 100,
       slide: function( event, ui ) {
         $( "#amount" ).val( ui.value );
+        var slider_value = $( "#amount" ).val();
+        var adjustment = $(".image-adjustments.selected-button").attr('id') || ""
+        console.log(adjustment + " " + slider_value);
+        if(adjustment.length > 1){
+          // Caspar_cmd("mixer", 1, 1, adjustment, slider_value/100, "1", "Linear");
+        }
       }
     });
     $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
@@ -65,7 +71,7 @@ $(".program-btn").click(function(){
     // Send command.
     console.log("JQUERY DEFERRED CALLBACK: " + message)
     var file =  $('#file_resource1').val();
-    Caspar_cmd("play", 1, 1, file);
+    // Caspar_cmd("play", 1, 1, file);
   });
   
 
@@ -89,7 +95,7 @@ $(".preset-btn").click(function(){
   dfd.done(function(message) {
     // Send command
     var file =  $('#file_resource2').val();
-    Caspar_cmd("play", 2, 1, file);
+    // Caspar_cmd("play", 2, 1, file);
   });
 	
 })
@@ -191,8 +197,8 @@ $(".trans-fx").click(function(){
 
 $(".trans").click(function(){
 
-  var preset_file = $('#file_resource2').val();
-  var program_file = $('#file_resource1').val();
+  var preset_file = $('#file_resource2').val() || "empty";
+  var program_file = $('#file_resource1').val() || "empty";
   var effect = $('.trans-fx.selected-button2').val();
   var duration = $('#amount2').val();
   var command = "play", auto = "";
@@ -202,8 +208,8 @@ $(".trans").click(function(){
     var command = "loadbg", auto = "auto";
   }
 
-  Caspar_cmd(command, 1, 1, preset_file, effect, duration, "easeinsine", auto)
-  Caspar_cmd("load", 2, 1, program_file)
+  // Caspar_cmd(command, 1, 1, preset_file, effect, duration, "easeinsine", auto)
+  // Caspar_cmd("load", 2, 1, program_file)
 
   // Current selected mixer buttons.
   var program = $(".program-btn.selected-button");
@@ -229,18 +235,17 @@ $(".trans").click(function(){
 
 $(".image-adjustments").click(function(){
 
-
-
+  // Selected button.
+  $('.image-adjustments').removeClass("selected-button");       
+  $(this).addClass( "selected-button" );
 
     
   })
 
+
 $("#Mixer-clear").click(function(){
 
-
-
-
-    
+      Caspar_cmd("mixer", 1,1, "clear")
   })
 $(".chroma").click(function(){
 
