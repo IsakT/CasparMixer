@@ -5,4 +5,4 @@ gem 'sinatra'
 gem 'sinatra-partial'
 gem 'thin'
 gem 'require_all'
-gem 'ruby'
+ruby "2.2.4"
