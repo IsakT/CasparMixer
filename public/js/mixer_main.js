@@ -25,7 +25,7 @@ $(document).ready(function() {
         var adjustment = $(".image-adjustments.selected-button").attr('id') || ""
         console.log(adjustment + " " + slider_value);
         if(adjustment.length > 1){
-          // Caspar_cmd("mixer", 1, 1, adjustment, slider_value/100, "1", "Linear");
+          Caspar_cmd("mixer", 1, 1, adjustment, slider_value/100, "1", "Linear");
         }
       }
     });
@@ -71,7 +71,7 @@ $(".program-btn").click(function(){
     // Send command.
     console.log("JQUERY DEFERRED CALLBACK: " + message)
     var file =  $('#file_resource1').val();
-    // Caspar_cmd("play", 1, 1, file);
+    Caspar_cmd("play", 1, 1, file);
   });
   
 
@@ -95,7 +95,7 @@ $(".preset-btn").click(function(){
   dfd.done(function(message) {
     // Send command
     var file =  $('#file_resource2').val();
-    // Caspar_cmd("play", 2, 1, file);
+    Caspar_cmd("play", 2, 1, file);
   });
 	
 })
@@ -208,8 +208,8 @@ $(".trans").click(function(){
     var command = "loadbg", auto = "auto";
   }
 
-  // Caspar_cmd(command, 1, 1, preset_file, effect, duration, "easeinsine", auto)
-  // Caspar_cmd("load", 2, 1, program_file)
+  Caspar_cmd(command, 1, 1, preset_file, effect, duration, "easeinsine", auto)
+  Caspar_cmd("load", 2, 1, program_file)
 
   // Current selected mixer buttons.
   var program = $(".program-btn.selected-button");
