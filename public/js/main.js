@@ -82,7 +82,7 @@
 
                 if($('.autoplay').hasClass("autoplay-enabled"))
                 {
-                   // CG_ADD(1);  // CG ADD with autoplay.
+                   CG_ADD(1);  // CG ADD with autoplay.
                 }
             });
 
