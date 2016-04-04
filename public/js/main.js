@@ -97,10 +97,11 @@
 
     		 	var button_data = update_button_data(button_id);
 
-          button_data.done(function() { 
+          button_data.done(function(msg) { 
 
             $('#status_button').text("Update done");
             console.log("Update done");
+            console.log(msg);
             display_button_name(button_id) 
 
             $(':button').prop('disabled', false);
