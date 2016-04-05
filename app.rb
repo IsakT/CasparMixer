@@ -16,6 +16,11 @@ class CasparService < Sinatra::Base
   #   status 404
   # end
 
+
+  # set :casparip, '85.230.107.27'
+  # set :casparip, '192.168.10.126'
+  # set :casparip, '127.0.0.1'
+
   	use Router
  	use AdminCaspar
 

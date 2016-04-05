@@ -1,7 +1,7 @@
 class Router < Sinatra::Base
 
 configure :production do
-    ENV['CASPARIP']="192.168.10.126"
+    # ENV['CASPARIP']="192.168.10.126"
 end
 
 # 85.230.107.27
@@ -10,7 +10,7 @@ end
 
 	configure :development do
 	     # enable :logging
-	     ENV['CASPARIP']="192.168.10.126"
+	     # ENV['CASPARIP']="192.168.10.126"
 	     # ENV['SESSION_SECRET']="Nfoiyafljnaskuyi/T(&%FYgliuesgf)"
 	end
 
