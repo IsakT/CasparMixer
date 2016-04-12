@@ -46,6 +46,47 @@ $(document).ready(function() {
     $( "#amount2" ).val( $( "#slider-vertical2" ).slider( "value" ) );
   });
 
+  $(function() {
+    $( "#slider-vertical3" ).slider({
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 250,
+      value: 20,
+      slide: function( event, ui ) {
+        $( "#amount3" ).val( ui.value );
+      }
+    });
+    $( "#amount3" ).val( $( "#slider-vertical3" ).slider( "value" ) );
+  });
+
+  $(function() {
+    $( "#slider-vertical4" ).slider({
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 250,
+      value: 20,
+      slide: function( event, ui ) {
+        $( "#amount4" ).val( ui.value );
+      }
+    });
+    $( "#amount4" ).val( $( "#slider-vertical4" ).slider( "value" ) );
+  });
+  $(function() {
+    $( "#slider-vertical5" ).slider({
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 250,
+      value: 20,
+      slide: function( event, ui ) {
+        $( "#amount5" ).val( ui.value );
+      }
+    });
+    $( "#amount5" ).val( $( "#slider-vertical5" ).slider( "value" ) );
+  });
+
 // *******************************************
 
 //              CLICK EVENTS

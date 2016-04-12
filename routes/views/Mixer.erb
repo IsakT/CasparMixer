@@ -40,18 +40,43 @@
 
 	<!-- Chroma -->
 	<div class="container col-sm-4 panel panel-default">
-		<div class="col-sm-12">
+		<div class="col-sm-6">
 			<h2>Chroma Key</h2>
 			<br/>
-			<button type="button" class="chroma"></button>				
+			<button type="button" class="chroma">Enable</button>				
 		</div>
-		<div class="col-sm-12">
+		<!-- Slider image-adjustment -->
+		<div class="col-sm-2">
+				<p>
+				  <label for="amount3">Threshold:</label>
+				  <input type="text" id="amount3" readonly style="border:0; color:#f6931f; font-weight:bold;">
+				</p> 
+				<div id="slider-vertical3" style="height:300px;"></div>
+		</div>
+		<!-- Slider image-adjustment -->
+		<div class="col-sm-2">
+				<p>
+				  <label for="amount4">Softness:</label>
+				  <input type="text" id="amount4" readonly style="border:0; color:#f6931f; font-weight:bold;">
+				</p> 
+				<div id="slider-vertical4" style="height:300px;"></div>
+		</div>
+		<!-- Slider image-adjustment -->
+		<div class="col-sm-2">
+				<p>
+				  <label for="amount5">Spill:</label>
+				  <input type="text" id="amount5" readonly style="border:0; color:#f6931f; font-weight:bold;">
+				</p> 
+				<div id="slider-vertical5" style="height:300px;"></div>
+		</div>
+		<!-- <div class="col-sm-12">
 			<h2>Media</h2>
 			<br/>
 			<button type="button" class="chroma-media" id="1">1</button>	
 			<button type="button" class="chroma-media" id="2">2</button>
 			<button type="button" class="chroma-media" id="3">3</button>			
-		</div>
+		</div> -->
+
 	</div>
 
 	<!-- Bottom half -->
