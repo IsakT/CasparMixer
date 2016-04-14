@@ -46,6 +46,7 @@ $(document).ready(function() {
     $( "#amount2" ).val( $( "#slider-vertical2" ).slider( "value" ) );
   });
 
+// CHROMA KEY
   $(function() {
     $( "#slider-vertical3" ).slider({
       orientation: "vertical",
@@ -136,7 +137,7 @@ $(".preset-btn").click(function(){
   dfd.done(function(message) {
     // Send command
     var file =  $('#file_resource2').val();
-    Caspar_cmd("play", 2, 1, file);
+    Caspar_cmd("load", 2, 1, file);
   });
 	
 })
@@ -279,22 +280,36 @@ $(".image-adjustments").click(function(){
   // Selected button.
   $('.image-adjustments').removeClass("selected-button");       
   $(this).addClass( "selected-button" );
-
-    
-  })
+  
+})
 
 
 $("#Mixer-clear").click(function(){
 
       Caspar_cmd("mixer", 1,1, "clear")
-  })
+})
+
 $(".chroma").click(function(){
 
+  // Selected button.
+  $('.chroma').removeClass("selected-button");       
+  $(this).addClass( "selected-button" );
 
+  var threshold = "", softness = "", spill = "";
+  var color = $(this).val(); 
 
+  if(color !== "none")
+  {
+    threshold = $('#amount3').val();
+    softness = $('#amount4').val();
+    spill = $('#amount5').val();
+  }
 
+  console.log(color + " " + threshold + " " + softness + " " + spill);
+
+  Caspar_cmd("mixer", 1, 1, "chroma", color, threshold, softness, spill);
     
-  })
+})
 
 $(".chroma-media").click(function(){
 
@@ -302,16 +317,7 @@ $(".chroma-media").click(function(){
 
 
     
-  })
-
-
-$(".trans").click(function(){
-
-
-
-
-  	
-  })
+})
 
 // *******************************************
 

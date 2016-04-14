@@ -301,7 +301,7 @@
 ************************/
 
 .chroma {
-background: green;
+/*background: green;*/
 /*  background-image: -webkit-linear-gradient(top, green, #8e44ad);
   background-image: -moz-linear-gradient(top, green, #8e44ad);
   background-image: -ms-linear-gradient(top, green, #8e44ad);
@@ -328,12 +328,12 @@ background: green;
 
 }
 .chroma:hover {
-  background: red;
+  /*background: red;*/
 }
 .chroma:active {
-  background-color:black;
-  /*position:relative;*/
-  top:1px;
+  /*background-color:black;
+  position:relative;
+  top:1px;*/
 }
 
 /***********************
@@ -368,12 +368,12 @@ background: green;
 
 }
 .image-adjustments:hover {
-  background: #824b99;
-  background-image: -webkit-linear-gradient(top, #824b99, #73388c);
-  background-image: -moz-linear-gradient(top, #824b99, #73388c);
-  background-image: -ms-linear-gradient(top, #824b99, #73388c);
-  background-image: -o-linear-gradient(top, #824b99, #73388c);
-  background-image: linear-gradient(to bottom, #824b99, #73388c);
+  background: #963a00;
+  background-image: -webkit-linear-gradient(top, #e67e22, #963a00);
+  background-image: -moz-linear-gradient(top, #e67e22, #963a00);
+  background-image: -ms-linear-gradient(top, #e67e22, #963a00);
+  background-image: -o-linear-gradient(top, #e67e22, #963a00);
+  background-image: linear-gradient(to bottom, #e67e22, #963a00);
   text-decoration: none;
 }
 .image-adjustments:active {
@@ -512,7 +512,15 @@ background: green;
 }
 
 .green:hover {
-  background-color: #1d9e11;
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.blue:hover {
+  background-color: blue;
 }
 
 .red {
@@ -521,6 +529,10 @@ background: green;
 
 .red:hover {
   background-color: red;
+}
+
+.none:hover {
+  background-color: black;
 }
 
 .autoplaychar:after {
